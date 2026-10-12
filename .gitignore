@@ -1,0 +1,15 @@
+# Dépendances / builds
+node_modules/
+dist/
+.cache/
+
+# Enviro local
+.env
+.env.*
+
+# Données brutes collectées 
+data/cache/
+
+# Système
+.DS_Store
+Thumbs.db
