@@ -32,10 +32,10 @@ Pas de compte, pas de collecte de données personnelles : la sélection reste da
 
 ## Stack prévue
 
-- Site statique
-- Données en JSON générées par un script de collecte
-- Moteur de filtre et de planning exécuté dans le navigateur
-- Déploiement automatique
+- **Site** : Vite, React, TypeScript et Tailwind CSS
+- **Données** : fichiers JSON générés par un script de collecte
+- **Moteur de filtre et de planning** : TypeScript pur, exécuté dans le navigateur
+- **Hébergement** : Codeberg Pages (site statique)
 
 ## Données et droits
 

@@ -1,0 +1,2265 @@
+{
+  "sections": [
+    {
+      "id": "ouverture",
+      "nom": "Film d'ouverture",
+      "parent": null
+    },
+    {
+      "id": "cloture",
+      "nom": "Film de clôture",
+      "parent": null
+    },
+    {
+      "id": "competition-europeenne",
+      "nom": "Compétition européenne",
+      "parent": null
+    },
+    {
+      "id": "invites-d-honneur",
+      "nom": "Invité.es d'honneur",
+      "parent": null
+    },
+    {
+      "id": "avant-premieres",
+      "nom": "Avant-premières",
+      "parent": null
+    },
+    {
+      "id": "toiles-de-maitres",
+      "nom": "Toiles de maîtres",
+      "parent": "avant-premieres"
+    },
+    {
+      "id": "focus-belgique",
+      "nom": "Focus Belgique",
+      "parent": null
+    },
+    {
+      "id": "cinemas-du-monde",
+      "nom": "Cinémas du monde",
+      "parent": null
+    },
+    {
+      "id": "visions-de-l-est",
+      "nom": "Visions de l'Est",
+      "parent": null
+    },
+    {
+      "id": "decouvertes-europeennes",
+      "nom": "Découvertes européennes",
+      "parent": null
+    },
+    {
+      "id": "perspectives-du-cinema-francais",
+      "nom": "Perspectives du cinéma français",
+      "parent": null
+    },
+    {
+      "id": "retro-crime-a-l-italienne",
+      "nom": "Rétrospective Crime à l'italienne",
+      "parent": null
+    },
+    {
+      "id": "retro-ouvriers-patrons-revolutions",
+      "nom": "Rétrospective Ouvriers, patrons & révolutions",
+      "parent": null
+    },
+    {
+      "id": "festival-en-famille",
+      "nom": "Festival en famille",
+      "parent": null
+    },
+    {
+      "id": "seances-speciales-rencontres",
+      "nom": "Séances spéciales Rencontres",
+      "parent": null
+    },
+    {
+      "id": "cine-concerts",
+      "nom": "Ciné-concerts",
+      "parent": null
+    },
+    {
+      "id": "afters-musicaux",
+      "nom": "Afters musicaux",
+      "parent": null
+    }
+  ],
+  "evenements": [
+    {
+      "id": "claude",
+      "titre": "CLAUDE",
+      "section": "ouverture",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/film-d-ouverture/claude.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-26.png?v=1",
+      "realisation": [
+        "Clément Michel"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 90,
+      "version": null,
+      "seances": [
+        "VENDREDI 6 NOVEMBRE À 20H AU CASINO D’ARRAS",
+        "en présence du réalisateur Clément Michel et des comédiens Kyan Khojandi et Clémentine Célarié"
+      ]
+    },
+    {
+      "id": "demain-je-tombe-amoureux",
+      "titre": "DEMAIN JE TOMBE AMOUREUX",
+      "section": "cloture",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/film-de-cloture/demain-je-tombe-amoureux.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-42.png?v=1",
+      "realisation": [
+        "Martin Provost"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 107,
+      "version": null,
+      "seances": [
+        "DIMANCHE 15 NOVEMBRE À 19H AU CASINO D’ARRAS",
+        "en présence du réalisateur Martin Provost"
+      ]
+    },
+    {
+      "id": "black-money-for-white-nights",
+      "titre": "BLACK MONEY FOR WHITE NIGHTS",
+      "section": "competition-europeenne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/competition-europeennes/black-money-for-white-nights.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-46.png?v=1",
+      "realisation": [
+        "Kristina Grozeva",
+        "Petar Valchanov"
+      ],
+      "pays": [
+        "Bulgarie"
+      ],
+      "annee": 2026,
+      "duree_min": 95,
+      "version": "vostf/vosta",
+      "seances": []
+    },
+    {
+      "id": "brace-your-heart",
+      "titre": "BRACE YOUR HEART",
+      "section": "competition-europeenne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/competition-europeennes/brace-your-heart.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-110.png?v=1",
+      "realisation": [
+        "Amanda Kernell"
+      ],
+      "pays": [
+        "Suède"
+      ],
+      "annee": 2026,
+      "duree_min": 97,
+      "version": "vostf/vosta",
+      "seances": []
+    },
+    {
+      "id": "feels-like-home",
+      "titre": "FEELS LIKE HOME",
+      "section": "competition-europeenne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/competition-europeennes/feels-like-home.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-47.png?v=1",
+      "realisation": [
+        "Gábor Holtai"
+      ],
+      "pays": [
+        "Hongrie"
+      ],
+      "annee": 2025,
+      "duree_min": 124,
+      "version": "vostf/vosta",
+      "seances": []
+    },
+    {
+      "id": "how-to-divorce-during-the-war",
+      "titre": "HOW TO DIVORCE DURING THE WAR",
+      "section": "competition-europeenne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/competition-europeennes/how-to-divorce-during-the-war.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-48.png?v=1",
+      "realisation": [
+        "Andrius Blazevicius"
+      ],
+      "pays": [
+        "Lituanie"
+      ],
+      "annee": 2026,
+      "duree_min": 108,
+      "version": "vostf/vosta",
+      "seances": []
+    },
+    {
+      "id": "mila-marija",
+      "titre": "MILA/MARIJA",
+      "section": "competition-europeenne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/competition-europeennes/mila-marija.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-16.png?v=1",
+      "realisation": [
+        "Andrina Mracnikar"
+      ],
+      "pays": [
+        "Autriche",
+        "Slovénie"
+      ],
+      "annee": 2026,
+      "duree_min": 110,
+      "version": "vostf/vosta",
+      "seances": []
+    },
+    {
+      "id": "only-beautiful-things-to-look-at",
+      "titre": "ONLY BEAUTIFUL THINGS TO LOOK AT",
+      "section": "competition-europeenne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/competition-europeennes/how-to-divorce-during-the-war-1.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-49.png?v=1",
+      "realisation": [
+        "Ivan Ostrochovsky"
+      ],
+      "pays": [
+        "Slovaquie"
+      ],
+      "annee": 2026,
+      "duree_min": 90,
+      "version": "vostf/vosta",
+      "seances": []
+    },
+    {
+      "id": "our-revolution",
+      "titre": "OUR REVOLUTION",
+      "section": "competition-europeenne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/competition-europeennes/our-revolution.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-109.png?v=1",
+      "realisation": [
+        "Piotr Domalewski"
+      ],
+      "pays": [
+        "Pologne"
+      ],
+      "annee": 2026,
+      "duree_min": 125,
+      "version": "vostf/vosta",
+      "seances": []
+    },
+    {
+      "id": "stand-up",
+      "titre": "STAND UP",
+      "section": "competition-europeenne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/competition-europeennes/stand-up.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-51.png?v=1",
+      "realisation": [
+        "Mari Sanders"
+      ],
+      "pays": [
+        "Pays Bas"
+      ],
+      "annee": 2026,
+      "duree_min": 95,
+      "version": "vostf/vosta",
+      "seances": []
+    },
+    {
+      "id": "the-guest-l-invitee",
+      "titre": "THE GUEST (L'INVITÉE)",
+      "section": "competition-europeenne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/competition-europeennes/l-invitee.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-52.png?v=1",
+      "realisation": [
+        "Mads Mengel"
+      ],
+      "pays": [
+        "Danemark"
+      ],
+      "annee": 2026,
+      "duree_min": 99,
+      "version": "vostf/vosta",
+      "seances": []
+    },
+    {
+      "id": "affreux-sales-et-mechants",
+      "titre": "AFFREUX, SALES ET MÉCHANTS",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/affreux-sales-et-mechants-1.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-96.png?v=1",
+      "realisation": [
+        "Ettore Scola"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 1976,
+      "duree_min": 115,
+      "version": "vostf, version restaurée",
+      "seances": []
+    },
+    {
+      "id": "alien-la-resurrection",
+      "titre": "ALIEN, LA RÉSURRECTION",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/alien-la-resurrection.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-90.png?v=1",
+      "realisation": [
+        "Jean-Pierre Jeunet"
+      ],
+      "pays": [
+        "USA"
+      ],
+      "annee": 1997,
+      "duree_min": 109,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "changer-l-eau-des-fleurs",
+      "titre": "CHANGER L'EAU DES FLEURS",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/changer-l-eau-des-fleurs.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-83.png?v=1",
+      "realisation": [
+        "Jean-Pierre Jeunet"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 138,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "delicatessen",
+      "titre": "DELICATESSEN",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/delicatessen.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-88.png?v=1",
+      "realisation": [
+        "Jean-Pierre Jeunet",
+        "Marc Caro"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 1991,
+      "duree_min": 99,
+      "version": "version restaurée",
+      "seances": []
+    },
+    {
+      "id": "fargo",
+      "titre": "FARGO",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/fargo.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-97.png?v=1",
+      "realisation": [
+        "Joel",
+        "Ethan Coen"
+      ],
+      "pays": [
+        "USA"
+      ],
+      "annee": 1996,
+      "duree_min": 98,
+      "version": "vostf, version restaurée",
+      "seances": []
+    },
+    {
+      "id": "l-extravagant-voyage-du-jeune-et-prodigieux-t-s-spivet",
+      "titre": "L’EXTRAVAGANT VOYAGE DU JEUNE ET PRODIGIEUX T.S. SPIVET",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/l-extravagant-voyage-du-jeune-et-prodigieux-t-s-spivet.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-94.png?v=1",
+      "realisation": [
+        "Jean-Pierre Jeunet"
+      ],
+      "pays": [
+        "France",
+        "Australie",
+        "Canada"
+      ],
+      "annee": 2013,
+      "duree_min": 105,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "l-homme-sans-passe",
+      "titre": "L'HOMME SANS PASSÉ",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/l-homme-sans-passe.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-98.png?v=1",
+      "realisation": [
+        "Aki Kaurismäki"
+      ],
+      "pays": [
+        "Finlande"
+      ],
+      "annee": 2002,
+      "duree_min": 97,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "l-honneur-perdu-de-katharina-blum",
+      "titre": "L'HONNEUR PERDU DE KATHARINA BLUM",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/l-honneur-perdu-de-katharina-blum.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-100.png?v=1",
+      "realisation": [
+        "Volker Schlöndorff",
+        "Margarethe von Trotta"
+      ],
+      "pays": [
+        "RFA"
+      ],
+      "annee": 1975,
+      "duree_min": 106,
+      "version": "vostf, version restaurée",
+      "seances": []
+    },
+    {
+      "id": "la-cite-des-enfants-perdus",
+      "titre": "LA CITÉ DES ENFANTS PERDUS",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/la-cite-des-enfants-perdus.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-89.png?v=1",
+      "realisation": [
+        "Jean-Pierre Jeunet"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 1995,
+      "duree_min": 112,
+      "version": "version restaurée",
+      "seances": []
+    },
+    {
+      "id": "la-mer-a-l-aube",
+      "titre": "LA MER À L'AUBE",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/la-mer-a-l-aube.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-102.png?v=1",
+      "realisation": [
+        "Volker Schlöndorff"
+      ],
+      "pays": [
+        "France",
+        "Allemagne"
+      ],
+      "annee": 2011,
+      "duree_min": 90,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "le-bois-de-klara",
+      "titre": "LE BOIS DE KLARA",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/le-bois-de-klara.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-99.png?v=1",
+      "realisation": [
+        "Volker Schlöndorff"
+      ],
+      "pays": [
+        "Allemagne"
+      ],
+      "annee": 2026,
+      "duree_min": 118,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "le-fabuleux-destin-d-amelie-poulain",
+      "titre": "LE FABULEUX DESTIN D’AMÉLIE POULAIN",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/le-fabuleux-destin-d-amelie-poulain.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-91.png?v=1",
+      "realisation": [
+        "Jean-Pierre Jeunet"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2001,
+      "duree_min": 122,
+      "version": "version restaurée",
+      "seances": []
+    },
+    {
+      "id": "le-tambour",
+      "titre": "LE TAMBOUR",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/le-tambour.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-101.png?v=1",
+      "realisation": [
+        "Volker Schlöndorff",
+        "Margarethe von Trotta"
+      ],
+      "pays": [
+        "RFA"
+      ],
+      "annee": 1979,
+      "duree_min": 142,
+      "version": "version restaurée",
+      "seances": []
+    },
+    {
+      "id": "micmacs-a-tire-larigot",
+      "titre": "MICMACS À TIRE-LARIGOT",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/micmacs-a-tire-larigot.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-93.png?v=1",
+      "realisation": [
+        "Jean-Pierre Jeunet"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2009,
+      "duree_min": 105,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "quand-la-mer-monte",
+      "titre": "QUAND LA MER MONTE...",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/quand-la-mer-monte.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-95.png?v=1",
+      "realisation": [
+        "Yolande Moreau",
+        "Gilles Porte"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2004,
+      "duree_min": 93,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "un-long-dimanche-de-fiancailles",
+      "titre": "UN LONG DIMANCHE DE FIANÇAILLES",
+      "section": "invites-d-honneur",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/inviteoes-d-honneur/un-long-dimanche-de-fiancailles.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-92.png?v=1",
+      "realisation": [
+        "Jean-Pierre Jeunet"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2004,
+      "duree_min": 133,
+      "version": "version restaurée",
+      "seances": []
+    },
+    {
+      "id": "7h40-ce-matin-la",
+      "titre": "7H40 CE MATIN LÀ",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/7h40-ce-matin-la.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-87.png?v=1",
+      "realisation": [
+        "Nicole Garcia"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 114,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "banquise",
+      "titre": "BANQUISE",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/banquise.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-40.png?v=1",
+      "realisation": [
+        "Emmanuel Courcol"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 90,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "beaux-seigneurs",
+      "titre": "BEAUX SEIGNEURS",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/beaux-seigneurs.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-37.png?v=1",
+      "realisation": [
+        "Maxime Roy"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 93,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "camembert",
+      "titre": "CAMEMBERT",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/camembert.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-86.png?v=1",
+      "realisation": [
+        "Matthieu Rumani",
+        "Nicolas Slomka"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 92,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "en-haut-de-la-pile",
+      "titre": "EN HAUT DE LA PILE",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/en-haut-de-la-pile.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-31.png?v=1",
+      "realisation": [
+        "Louis-Julien Petit"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 102,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "gabin",
+      "titre": "GABIN",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/gabin.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-27.png?v=1",
+      "realisation": [
+        "Maxence Voiseux"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 105,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "gilles-united",
+      "titre": "GILLES UNITED",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/gilles-united.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-53.png?v=1",
+      "realisation": [
+        "Grégoire Ludig"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 89,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "jupiter",
+      "titre": "JUPITER",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/jupiter.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-54.png?v=1",
+      "realisation": [
+        "Alexandre Smia"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 87,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "la-troisieme-nuit",
+      "titre": "LA TROISIÈME NUIT",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/la-troisieme-nuit.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-45.png?v=1",
+      "realisation": [
+        "Daniel Auteuil"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 100,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "malika",
+      "titre": "MALIKA",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/malika.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-15.png?v=1",
+      "realisation": [
+        "Mounia Meddour"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 90,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "mariage-au-gout-d-orange",
+      "titre": "MARIAGE AU GOÛT D'ORANGE",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/mariage-au-gout-d-orange.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-55.png?v=1",
+      "realisation": [
+        "Christophe Honoré"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 115,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "un-bon-petit-soldat",
+      "titre": "UN BON PETIT SOLDAT",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/un-bon-petit-soldat.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-41.png?v=1",
+      "realisation": [
+        "Stéphane Brizé"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 101,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "voila-c-est-fini",
+      "titre": "VOILÀ, C'EST FINI",
+      "section": "avant-premieres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/voila-c-est-fini.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-19.png?v=1",
+      "realisation": [
+        "Gustave Kervern"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 101,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "behemoth",
+      "titre": "BEHEMOTH !",
+      "section": "toiles-de-maitres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/toiles-de-maitres/behemoth.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-57.png?v=1",
+      "realisation": [
+        "Tony Gilroy"
+      ],
+      "pays": [
+        "USA"
+      ],
+      "annee": 2026,
+      "duree_min": 124,
+      "version": "Vostf",
+      "seances": []
+    },
+    {
+      "id": "fatherland",
+      "titre": "FATHERLAND",
+      "section": "toiles-de-maitres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/toiles-de-maitres/fatherland.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-58.png?v=1",
+      "realisation": [
+        "Pawel Pawlikowski"
+      ],
+      "pays": [
+        "Allemagne",
+        "Pologne",
+        "France",
+        "Italie"
+      ],
+      "annee": 2026,
+      "duree_min": 82,
+      "version": "Vostf",
+      "seances": []
+    },
+    {
+      "id": "le-chateau-d-arioka",
+      "titre": "LE CHÂTEAU D'ARIOKA",
+      "section": "toiles-de-maitres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/toiles-de-maitres/le-chateau-d-arioka.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-59.png?v=1",
+      "realisation": [
+        "Kiyoshi Kurosawa"
+      ],
+      "pays": [
+        "Japan"
+      ],
+      "annee": 2026,
+      "duree_min": 147,
+      "version": "Vostf",
+      "seances": []
+    },
+    {
+      "id": "le-sabre-des-gardiens",
+      "titre": "LE SABRE DES GARDIENS",
+      "section": "toiles-de-maitres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/toiles-de-maitres/le-sabre-des-gardiens.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-39.png?v=1",
+      "realisation": [
+        "Yuen Woo-Ping"
+      ],
+      "pays": [
+        "Chine"
+      ],
+      "annee": 2026,
+      "duree_min": 129,
+      "version": "Vostf",
+      "seances": []
+    },
+    {
+      "id": "woman-unknown",
+      "titre": "WOMAN UNKNOWN",
+      "section": "toiles-de-maitres",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/avant-premieres/toiles-de-maitres/woman-unknown.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-56.png?v=1",
+      "realisation": [
+        "May el-Toukhy"
+      ],
+      "pays": [
+        "Danemark"
+      ],
+      "annee": 2026,
+      "duree_min": 124,
+      "version": "Vostf",
+      "seances": []
+    },
+    {
+      "id": "dust",
+      "titre": "DUST",
+      "section": "focus-belgique",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/focus-belgique/dust.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-84.png?v=1",
+      "realisation": [
+        "Anke Blondé"
+      ],
+      "pays": [
+        "Belgique"
+      ],
+      "annee": 2026,
+      "duree_min": 115,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "le-faux-soir",
+      "titre": "LE FAUX SOIR",
+      "section": "focus-belgique",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/focus-belgique/le-faux-soir.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-61.png?v=1",
+      "realisation": [
+        "Michaël R. Roskam"
+      ],
+      "pays": [
+        "Belgique",
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 134,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "les-braves-coward",
+      "titre": "LES BRAVES (COWARD)",
+      "section": "focus-belgique",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/focus-belgique/les-braves-coward.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-30.png?v=1",
+      "realisation": [
+        "Lukas Dhont"
+      ],
+      "pays": [
+        "Belgique"
+      ],
+      "annee": 2026,
+      "duree_min": 120,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "radio-bonheur",
+      "titre": "RADIO BONHEUR",
+      "section": "focus-belgique",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/focus-belgique/radio-bonheur.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-60.png?v=1",
+      "realisation": [
+        "Valéry Rosier"
+      ],
+      "pays": [
+        "Belgique",
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 78,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "radioman",
+      "titre": "RADIOMAN",
+      "section": "focus-belgique",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/focus-belgique/radioman.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-63.png?v=1",
+      "realisation": [
+        "Frank Van Passel"
+      ],
+      "pays": [
+        "Belgique"
+      ],
+      "annee": 2025,
+      "duree_min": 118,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "un-detour-par-diane",
+      "titre": "UN DÉTOUR PAR DIANE",
+      "section": "focus-belgique",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/focus-belgique/un-detour-par-diane.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-62.png?v=1",
+      "realisation": [
+        "Ann Sirot",
+        "Raphaël Balboni"
+      ],
+      "pays": [
+        "Belgique",
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 91,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "call-me-queen",
+      "titre": "CALL ME QUEEN",
+      "section": "cinemas-du-monde",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/cinemas-du-monde/call-me-queen.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-66.png?v=1",
+      "realisation": [
+        "Emily Atef"
+      ],
+      "pays": [
+        "Kenya",
+        "Allemagne",
+        "Royaume-Uni",
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 101,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "disaster",
+      "titre": "DISASTER",
+      "section": "cinemas-du-monde",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/cinemas-du-monde/disaster.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-38.png?v=1",
+      "realisation": [
+        "Yutaro Seki",
+        "Kentaro Hirase"
+      ],
+      "pays": [
+        "Japon"
+      ],
+      "annee": 2025,
+      "duree_min": 128,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "furies",
+      "titre": "FURIES",
+      "section": "cinemas-du-monde",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/cinemas-du-monde/furies.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-65.png?v=1",
+      "realisation": [
+        "Rami Kodeih"
+      ],
+      "pays": [
+        "Liban",
+        "Brésil"
+      ],
+      "annee": 2026,
+      "duree_min": 133,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "la-deuxieme-fille",
+      "titre": "LA DEUXIÈME FILLE",
+      "section": "cinemas-du-monde",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/cinemas-du-monde/la-deuxieme-fille.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-23.png?v=1",
+      "realisation": [
+        "ZOU Jing"
+      ],
+      "pays": [
+        "Chine",
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 128,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "les-amants-de-pyongyang",
+      "titre": "LES AMANTS DE PYONGYANG",
+      "section": "cinemas-du-monde",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/cinemas-du-monde/les-amants-de-pyongyang.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-64.png?v=1",
+      "realisation": [
+        "KIM Bo-sol"
+      ],
+      "pays": [
+        "Corée du Sud"
+      ],
+      "annee": 2025,
+      "duree_min": 73,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "moscas",
+      "titre": "MOSCAS",
+      "section": "cinemas-du-monde",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/cinemas-du-monde/moscas.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-21.png?v=1",
+      "realisation": [
+        "Fernando Eimbcke"
+      ],
+      "pays": [
+        "Mexique"
+      ],
+      "annee": 2026,
+      "duree_min": 99,
+      "version": "vostf, noir et blanc",
+      "seances": []
+    },
+    {
+      "id": "no-good-men",
+      "titre": "NO GOOD MEN",
+      "section": "cinemas-du-monde",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/cinemas-du-monde/no-good-men.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-28.png?v=1",
+      "realisation": [
+        "Shahrbanoo Sadat"
+      ],
+      "pays": [
+        "Allemagne",
+        "France",
+        "Danemark",
+        "Norvège",
+        "Afghanistan"
+      ],
+      "annee": 2026,
+      "duree_min": 104,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "the-difficult-bride",
+      "titre": "THE DIFFICULT BRIDE",
+      "section": "cinemas-du-monde",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/cinemas-du-monde/the-difficult-bride.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-85.png?v=1",
+      "realisation": [
+        "Rubaiyat Hossain"
+      ],
+      "pays": [
+        "Bangladesh",
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 88,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "atlas-de-l-univers",
+      "titre": "ATLAS DE L'UNIVERS",
+      "section": "visions-de-l-est",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/visions-de-l-est/atlas-de-l-univers.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-8.png?v=1",
+      "realisation": [
+        "Paul Negoescu"
+      ],
+      "pays": [
+        "Roumanie"
+      ],
+      "annee": 2026,
+      "duree_min": 85,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "dua",
+      "titre": "DUA",
+      "section": "visions-de-l-est",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/visions-de-l-est/dua.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-9.png?v=1",
+      "realisation": [
+        "Blerta Basholli"
+      ],
+      "pays": [
+        "Kosovo",
+        "Suisse"
+      ],
+      "annee": 2026,
+      "duree_min": 101,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "guria",
+      "titre": "GURIA",
+      "section": "visions-de-l-est",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/visions-de-l-est/guria.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-68.png?v=1",
+      "realisation": [
+        "Levan Koguashvili"
+      ],
+      "pays": [
+        "Géorgie"
+      ],
+      "annee": 2026,
+      "duree_min": 118,
+      "version": "vostf, noir et blanc",
+      "seances": []
+    },
+    {
+      "id": "le-prix-et-la-valeur",
+      "titre": "LE PRIX ET LA VALEUR",
+      "section": "visions-de-l-est",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/visions-de-l-est/le-prix-et-la-valeur.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-24.png?v=1",
+      "realisation": [
+        "Visar Morina"
+      ],
+      "pays": [
+        "Kosovo",
+        "Allemagne"
+      ],
+      "annee": 2026,
+      "duree_min": 129,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "ulya",
+      "titre": "ULYA",
+      "section": "visions-de-l-est",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/visions-de-l-est/ulya.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-20.png?v=1",
+      "realisation": [
+        "Viesturs Kairiss"
+      ],
+      "pays": [
+        "Lettonie"
+      ],
+      "annee": 2026,
+      "duree_min": 102,
+      "version": "vostf, noir et blanc",
+      "seances": []
+    },
+    {
+      "id": "winter-of-the-crow",
+      "titre": "WINTER OF THE CROW",
+      "section": "visions-de-l-est",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/visions-de-l-est/winter-of-the-crow.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-67.png?v=1",
+      "realisation": [
+        "Kasia Adamik"
+      ],
+      "pays": [
+        "Pologne",
+        "Luxembourg",
+        "Royaume-Uni"
+      ],
+      "annee": 2025,
+      "duree_min": 112,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "a-family",
+      "titre": "A FAMILY",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/a-family.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-4.png?v=1",
+      "realisation": [
+        "Mees Peijnenburg"
+      ],
+      "pays": [
+        "Pays Bas"
+      ],
+      "annee": 2026,
+      "duree_min": 89,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "a-jamais-les-premieres",
+      "titre": "À JAMAIS LES PREMIÈRES",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/a-jamais-les-premieres.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-70.png?v=1",
+      "realisation": [
+        "Marta Diaz de Lope Diaz"
+      ],
+      "pays": [
+        "Espagne",
+        "Portugal"
+      ],
+      "annee": 2026,
+      "duree_min": 106,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "armony",
+      "titre": "ARMONY",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/armony.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-74.png?v=1",
+      "realisation": [
+        "Dario Albertini"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 2026,
+      "duree_min": 104,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "enjoy-your-stay",
+      "titre": "ENJOY YOUR STAY",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/enjoy-your-stay.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-73.png?v=1",
+      "realisation": [
+        "Dominik Locher"
+      ],
+      "pays": [
+        "Suisse"
+      ],
+      "annee": 2026,
+      "duree_min": 99,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "hold-onto-me",
+      "titre": "HOLD ONTO ME",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/hold-onto-me.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-71.png?v=1",
+      "realisation": [
+        "Myrsini Aristidou"
+      ],
+      "pays": [
+        "Chypre"
+      ],
+      "annee": 2026,
+      "duree_min": 102,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "je-vois-des-immeubles-tomber-comme-la-foudre",
+      "titre": "JE VOIS DES IMMEUBLES TOMBER COMME LA FOUDRE",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/je-vois-des-immeubles-tomber-comme-la-foudre.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-7.png?v=1",
+      "realisation": [
+        "Clio Barnard"
+      ],
+      "pays": [
+        "Royaume-Uni"
+      ],
+      "annee": 2026,
+      "duree_min": 109,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "la-bola-negra",
+      "titre": "LA BOLA NEGRA",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/la-bola-negra.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-69.png?v=1",
+      "realisation": [
+        "Javier Calvo",
+        "Javier Ambrossi"
+      ],
+      "pays": [
+        "Espagne"
+      ],
+      "annee": 2026,
+      "duree_min": 155,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "le-proces",
+      "titre": "LE PROCÈS",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/le-proces.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-43.png?v=1",
+      "realisation": [
+        "Kai Stänicke"
+      ],
+      "pays": [
+        "Allemagne"
+      ],
+      "annee": 2026,
+      "duree_min": 122,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "tell-everyone",
+      "titre": "TELL EVERYONE",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/tell-everyone.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-72.png?v=1",
+      "realisation": [
+        "Alli Haapasalo"
+      ],
+      "pays": [
+        "Finlande"
+      ],
+      "annee": 2026,
+      "duree_min": 112,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "the-education-of-jane-cumming",
+      "titre": "THE EDUCATION OF JANE CUMMING",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/the-education-of-jane-cumming.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-6.png?v=1",
+      "realisation": [
+        "Sophie Heldman"
+      ],
+      "pays": [
+        "Allemagne",
+        "Royaume-Uni",
+        "Suisse"
+      ],
+      "annee": 2026,
+      "duree_min": 114,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "un-coeur-fidele",
+      "titre": "UN COEUR FIDÈLE",
+      "section": "decouvertes-europeennes",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/decouvertes-europeennes/un-coeur-fidele.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-44.png?v=1",
+      "realisation": [
+        "Julia De Paz Solvas"
+      ],
+      "pays": [
+        "Espagne"
+      ],
+      "annee": 2026,
+      "duree_min": 101,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "blaise",
+      "titre": "BLAISE",
+      "section": "perspectives-du-cinema-francais",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/perspectives-du-cinema-francais/blaise.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-22.png?v=1",
+      "realisation": [
+        "Dimitri Planchon",
+        "Jean-Paul Guigue"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 82,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "chercheurs",
+      "titre": "CHERCHEURS",
+      "section": "perspectives-du-cinema-francais",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/perspectives-du-cinema-francais/chercheurs.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-75.png?v=1",
+      "realisation": [
+        "Aurélien Peilloux"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 109,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "l-une-des-leurs",
+      "titre": "L'UNE DES LEURS",
+      "section": "perspectives-du-cinema-francais",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/perspectives-du-cinema-francais/l-une-des-leurs.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-76.png?v=1",
+      "realisation": [
+        "Marie Rosselet-Ruiz"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 96,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "le-lievre",
+      "titre": "LE LIÈVRE",
+      "section": "perspectives-du-cinema-francais",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/perspectives-du-cinema-francais/le-lievre.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-29.png?v=1",
+      "realisation": [
+        "Gonzague Legout"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 95,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "les-princes",
+      "titre": "LES PRINCES",
+      "section": "perspectives-du-cinema-francais",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/perspectives-du-cinema-francais/les-princes.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-25.png?v=1",
+      "realisation": [
+        "Antoine Giorgini"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 88,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "enquete-sur-un-citoyen-au-dessus-de-tout-soupcon",
+      "titre": "ENQUÊTE SUR UN CITOYEN AU-DESSUS DE TOUT SOUPÇON",
+      "section": "retro-crime-a-l-italienne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-crime-a-l-italienne/enquete-sur-un-citoyen-au-dessus-de-tout-soupcon.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-enque-te-sur-un-citoyen-au-dessus-de-tout-soupc-on.png?v=1",
+      "realisation": [
+        "Elio Petri"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 1970,
+      "duree_min": 115,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "l-emmuree-vivante",
+      "titre": "L'EMMURÉE VIVANTE",
+      "section": "retro-crime-a-l-italienne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-crime-a-l-italienne/l-emmuree-vivante.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-l-emmure-e-vivante.png?v=1",
+      "realisation": [
+        "Lucio Fulci"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 1977,
+      "duree_min": 95,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "l-oiseau-au-plumage-de-cristal",
+      "titre": "L'OISEAU AU PLUMAGE DE CRISTAL",
+      "section": "retro-crime-a-l-italienne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-crime-a-l-italienne/l-oiseau-au-plumage-de-cristal.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/430.png?v=1",
+      "realisation": [
+        "Dario Argento"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 1970,
+      "duree_min": 96,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "la-fille-qui-en-savait-trop",
+      "titre": "LA FILLE QUI EN SAVAIT TROP",
+      "section": "retro-crime-a-l-italienne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-crime-a-l-italienne/la-fille-qui-en-savait-trop.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/431.png?v=1",
+      "realisation": [
+        "Mario Bava"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 1963,
+      "duree_min": 88,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "la-tarentule-au-ventre-noir",
+      "titre": "LA TARENTULE AU VENTRE NOIR",
+      "section": "retro-crime-a-l-italienne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-crime-a-l-italienne/la-tarentule-au-ventre-noir.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-la-tarentule-au-ventre-noir.png?v=1",
+      "realisation": [
+        "Paolo Cavara"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 1971,
+      "duree_min": 89,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "meurtre-a-l-italienne",
+      "titre": "MEURTRE À L'ITALIENNE",
+      "section": "retro-crime-a-l-italienne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-crime-a-l-italienne/meurtre-a-l-italienne.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-meurtre-a-l-italienne.png?v=1",
+      "realisation": [
+        "Pietro Germi"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 1959,
+      "duree_min": 114,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "qui-a-tue-le-chat",
+      "titre": "QUI A TUÉ LE CHAT ?",
+      "section": "retro-crime-a-l-italienne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-crime-a-l-italienne/qui-a-tue-le-chat.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiches-site-300x400-9.png?v=1",
+      "realisation": [
+        "Luigi Comencini"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 1977,
+      "duree_min": 109,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "qui-sera-tue-demain",
+      "titre": "QUI SERA TUÉ DEMAIN ?",
+      "section": "retro-crime-a-l-italienne",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-crime-a-l-italienne/qui-sera-tue-demain.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-qui-sera-tue-demain.png?v=1",
+      "realisation": [
+        "Luigi Zampa"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 1977,
+      "duree_min": 94,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "adalen-31",
+      "titre": "ADALEN 31",
+      "section": "retro-ouvriers-patrons-revolutions",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-ouvriers-patrons-revolutions/adalen-31.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/435.png?v=1",
+      "realisation": [
+        "Bo Widerberg"
+      ],
+      "pays": [
+        "Suède"
+      ],
+      "annee": 1969,
+      "duree_min": 110,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "daens",
+      "titre": "DAENS",
+      "section": "retro-ouvriers-patrons-revolutions",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-ouvriers-patrons-revolutions/matewan-1.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/439.png?v=1",
+      "realisation": [
+        "Stijn Coninx"
+      ],
+      "pays": [
+        "Belgique"
+      ],
+      "annee": 1992,
+      "duree_min": 138,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "germinal",
+      "titre": "GERMINAL",
+      "section": "retro-ouvriers-patrons-revolutions",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-ouvriers-patrons-revolutions/germinal.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiches-site-300x400-6.png?v=1",
+      "realisation": [
+        "Yves Allégret"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 1963,
+      "duree_min": 110,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "la-terre-de-la-grande-promesse",
+      "titre": "LA TERRE DE LA GRANDE PROMESSE",
+      "section": "retro-ouvriers-patrons-revolutions",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-ouvriers-patrons-revolutions/la-terre-de-la-grande-promesse.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/437.png?v=1",
+      "realisation": [
+        "Andrzej Wajda"
+      ],
+      "pays": [
+        "Pologne"
+      ],
+      "annee": 1975,
+      "duree_min": 179,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "le-jeune-karl-marx",
+      "titre": "LE JEUNE KARL MARX",
+      "section": "retro-ouvriers-patrons-revolutions",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-ouvriers-patrons-revolutions/le-jeune-karl-marx.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/440.png?v=1",
+      "realisation": [
+        "Raoul Peck"
+      ],
+      "pays": [
+        "France-Allemagne"
+      ],
+      "annee": 2017,
+      "duree_min": 118,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "les-camarades",
+      "titre": "LES CAMARADES",
+      "section": "retro-ouvriers-patrons-revolutions",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-ouvriers-patrons-revolutions/les-camarades.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiches-site-300x400-7.png?v=1",
+      "realisation": [
+        "Mario Monicelli"
+      ],
+      "pays": [
+        "Italie"
+      ],
+      "annee": 1963,
+      "duree_min": 130,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "les-miserables",
+      "titre": "LES MISÉRABLES",
+      "section": "retro-ouvriers-patrons-revolutions",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-ouvriers-patrons-revolutions/les-miserables.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-103.png?v=1",
+      "realisation": [
+        "Marcel Bluwal"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 1972,
+      "duree_min": null,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "matewan",
+      "titre": "MATEWAN",
+      "section": "retro-ouvriers-patrons-revolutions",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-ouvriers-patrons-revolutions/matewan.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/438.png?v=1",
+      "realisation": [
+        "John Sayles"
+      ],
+      "pays": [
+        "USA"
+      ],
+      "annee": 1987,
+      "duree_min": 135,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "traitre-sur-commande",
+      "titre": "TRAITRE SUR COMMANDE",
+      "section": "retro-ouvriers-patrons-revolutions",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/retro-ouvriers-patrons-revolutions/traitre-sur-commande.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/436.png?v=1",
+      "realisation": [
+        "Martin Ritt"
+      ],
+      "pays": [
+        "USA"
+      ],
+      "annee": 1970,
+      "duree_min": 124,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "a-la-poursuite-de-l-affreunard",
+      "titre": "À LA POURSUITE DE L’AFFREUNARD",
+      "section": "festival-en-famille",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/festival-des-familles/a-la-poursuite-de-l-affreunard.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-35.png?v=1",
+      "realisation": [
+        "Benjamin Botella"
+      ],
+      "pays": [
+        "Suisse",
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 44,
+      "version": "animation",
+      "seances": []
+    },
+    {
+      "id": "carmen-l-oiseau-rebelle",
+      "titre": "CARMEN, L'OISEAU REBELLE",
+      "section": "festival-en-famille",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/festival-des-familles/carmen-l-oiseau-rebelle.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-14.png?v=1",
+      "realisation": [
+        "Sébastien Laudenbach"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 93,
+      "version": "animation",
+      "seances": []
+    },
+    {
+      "id": "en-promenade",
+      "titre": "EN PROMENADE",
+      "section": "festival-en-famille",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/festival-des-familles/en-promenade.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-32.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "la-chenille-qui-fait-des-trous",
+      "titre": "LA CHENILLE QUI FAIT DES TROUS",
+      "section": "festival-en-famille",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/festival-des-familles/la-chenille-qui-fait-des-trous.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-34.png?v=1",
+      "realisation": [
+        "Andrew Goff"
+      ],
+      "pays": [
+        "Royaume-Uni"
+      ],
+      "annee": 2025,
+      "duree_min": 35,
+      "version": "animation",
+      "seances": []
+    },
+    {
+      "id": "leo-le-chant-des-oceans",
+      "titre": "LÉO, LE CHANT DES OCÉANS",
+      "section": "festival-en-famille",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/festival-des-familles/leo-le-chant-des-oceans.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-33.png?v=1",
+      "realisation": [
+        "Reza Memari"
+      ],
+      "pays": [
+        "Allemagne"
+      ],
+      "annee": 2025,
+      "duree_min": 91,
+      "version": "animation",
+      "seances": []
+    },
+    {
+      "id": "muyi-la-legende-du-village-des-femmes",
+      "titre": "MUYI, LA LÉGENDE DU VILLAGE DES FEMMES",
+      "section": "festival-en-famille",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/festival-des-familles/muyi-la-legende-du-village-des-femmes.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-17.png?v=1",
+      "realisation": [
+        "Julien Chheng"
+      ],
+      "pays": [
+        "France"
+      ],
+      "annee": 2026,
+      "duree_min": 90,
+      "version": "animation",
+      "seances": []
+    },
+    {
+      "id": "new-york-miriam-et-moi",
+      "titre": "NEW YORK, MIRIAM ET MOI",
+      "section": "festival-en-famille",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/festival-des-familles/new-york-miriam-et-moi.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-18.png?v=1",
+      "realisation": [
+        "Rémy Schaepman",
+        "Léahn Vivier-Chapas"
+      ],
+      "pays": [
+        "France",
+        "Luxembourg"
+      ],
+      "annee": 2026,
+      "duree_min": 82,
+      "version": "animation",
+      "seances": []
+    },
+    {
+      "id": "papaya",
+      "titre": "PAPAYA",
+      "section": "festival-en-famille",
+      "type": "film",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/festival-des-familles/papaya.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-134.png?v=1",
+      "realisation": [
+        "Priscilla Kellen"
+      ],
+      "pays": [
+        "Brésil"
+      ],
+      "annee": 2025,
+      "duree_min": 74,
+      "version": "animation",
+      "seances": []
+    },
+    {
+      "id": "1984",
+      "titre": "1984",
+      "section": "seances-speciales-rencontres",
+      "type": "rencontre",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/seances-speciales/1984.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-79.png?v=1",
+      "realisation": [
+        "Michael Radford"
+      ],
+      "pays": [
+        "Royaume-Uni"
+      ],
+      "annee": 1984,
+      "duree_min": 113,
+      "version": "vostf",
+      "seances": []
+    },
+    {
+      "id": "l-affaire-klarsfeld",
+      "titre": "L'AFFAIRE KLARSFELD",
+      "section": "seances-speciales-rencontres",
+      "type": "rencontre",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/seances-speciales/l-affaire-klarsfeld.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-81.png?v=1",
+      "realisation": [
+        "Rupert Wyatt",
+        "Emilie Phuong"
+      ],
+      "pays": [
+        "France",
+        "Luxembourg"
+      ],
+      "annee": 2026,
+      "duree_min": 85,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "la-faille",
+      "titre": "LA FAILLE",
+      "section": "seances-speciales-rencontres",
+      "type": "rencontre",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/seances-speciales/la-faille.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-80.png?v=1",
+      "realisation": [
+        "Peter Fleischmann"
+      ],
+      "pays": [
+        "France",
+        "Allemagne",
+        "Italie"
+      ],
+      "annee": 1975,
+      "duree_min": 110,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "lecon-de-cinema-de-jean-pierre-jeunet",
+      "titre": "Leçon de cinéma de Jean-Pierre Jeunet",
+      "section": "seances-speciales-rencontres",
+      "type": "rencontre",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/rencontres/lecon-de-cinema-de-jean-pierre-jeunet.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-111.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances": [
+        "Vendredi 13 novembre 2026"
+      ]
+    },
+    {
+      "id": "cine-concert-faut-pas-s-en-faire",
+      "titre": "CINÉ-CONCERT FAUT PAS S'EN FAIRE",
+      "section": "cine-concerts",
+      "type": "cine-concert",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/cine-concerts/cine-concert-faut-pas-s-en-faire.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-82.png?v=1",
+      "realisation": [
+        "Fred C. Newmeyer",
+        "Sam Taylor"
+      ],
+      "pays": [
+        "USA"
+      ],
+      "annee": 1923,
+      "duree_min": 60,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "cine-concert-la-greve",
+      "titre": "CINÉ-CONCERT LA GRÈVE",
+      "section": "cine-concerts",
+      "type": "cine-concert",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/cine-concerts/cine-concert-la-greve.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-la-gre-ve.png?v=1",
+      "realisation": [
+        "Serguei M. Eisenstein"
+      ],
+      "pays": [
+        "URSS"
+      ],
+      "annee": 1925,
+      "duree_min": 85,
+      "version": null,
+      "seances": []
+    },
+    {
+      "id": "blind-test",
+      "titre": "BLIND TEST",
+      "section": "afters-musicaux",
+      "type": "after",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/afters-musicaux/blind-test.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/blind-test.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances": [
+        "Lundi 9 novembre 2026"
+      ]
+    },
+    {
+      "id": "fluo-sauvage",
+      "titre": "FLUO SAUVAGE",
+      "section": "afters-musicaux",
+      "type": "after",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/afters-musicaux/fluo-sauvage.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-108.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances": [
+        "Vendredi 13 novembre 2026"
+      ]
+    },
+    {
+      "id": "francis",
+      "titre": "FRANCIS",
+      "section": "afters-musicaux",
+      "type": "after",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/afters-musicaux/francis-1.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/francis-afters-musicaux.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances": [
+        "Samedi 14 novembre 2026"
+      ]
+    },
+    {
+      "id": "meryha",
+      "titre": "MÉRYHA",
+      "section": "afters-musicaux",
+      "type": "after",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/afters-musicaux/meryha.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-106.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances": [
+        "Mercredi 11 novembre 2026"
+      ]
+    },
+    {
+      "id": "radiomono",
+      "titre": "RADIOMONO",
+      "section": "afters-musicaux",
+      "type": "after",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/afters-musicaux/radiomono.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-104.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances": [
+        "Samedi 7 novembre 2026"
+      ]
+    },
+    {
+      "id": "the-water-pistols",
+      "titre": "THE WATER PISTOLS",
+      "section": "afters-musicaux",
+      "type": "after",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/afters-musicaux/the-water-pistols.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-107.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances": [
+        "Jeudi 12 novembre 2026"
+      ]
+    },
+    {
+      "id": "two-of-us",
+      "titre": "TWO OF US",
+      "section": "afters-musicaux",
+      "type": "after",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/afters-musicaux/two-of-us.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-105.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances": [
+        "Mardi 10 novembre 2026"
+      ]
+    }
+  ]
+}
