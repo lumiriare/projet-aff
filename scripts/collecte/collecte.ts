@@ -8,7 +8,7 @@
 import { chromium, type Page } from "playwright"
 import { mkdir, writeFile } from "node:fs/promises"
 import path from "node:path"
-import { analyserFiche, nettoyer, slugify } from "./analyse.ts"
+import { analyserFiche, nettoyer, slugify, jourIncompatible2026, ressembleASeance, type Seance } from "./analyse.ts"
 
 // Constantes pour la collecte des données
 const URL_PROGRAMME = 'https://www.arrasfilmfestival.com/pages/le-festival/programme-edition/'
@@ -171,14 +171,15 @@ interface Evenement {
     annee: number | null
     duree_min: number | null
     version: string | null
-    seances: string[]
+    seances_brutes: string[]
+    seances: Seance[]
 }
 
 const attendre = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
 
 // Lecture d'une fiche film à partir de son URL
-async function lireFiche(page: Page, url: string, alertes: string[]): Promise<Evenement> {
+async function lireFiche(page: Page, url: string, alertes: string[], masques: string[]): Promise<Evenement> {
 
     // Chargement de la page et lecture du texte affiché
     await page.goto(url, { waitUntil: 'domcontentloaded' })
@@ -187,6 +188,12 @@ async function lireFiche(page: Page, url: string, alertes: string[]): Promise<Ev
     const affiche = await page.evaluate(
         () => document.querySelector('meta[property="og:image"]')?.getAttribute('content') ?? null,
     )
+    const cachees = await page.evaluate(() =>
+        Array.from(document.body.querySelectorAll('h1,h2,h3,h4,h5,h6,p,li,span,div'))
+        .filter((el) => !el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true }))
+        .map((el) => (el.textContent ?? '').trim()),
+    )
+    
     
     // Écriture du texte brut dans un fichier pour inspection ultérieure
     const chemin = url.replace(PREFIXE_FICHES, '').replace(/\.html$/, '')
@@ -197,22 +204,41 @@ async function lireFiche(page: Page, url: string, alertes: string[]): Promise<Ev
     
     // Analyse du texte pour extraire les informations
     const section = SECTIONS.find((s) => s.dossiers.includes(dossier))
-    if (!section) {alertes.push(`Dossier inconnu « ${dossier} » : ${url}`)}                             // si le dossier n'est pas dans la configuration, on signale une alerte
+    if (!section) {alertes.push(`Dossier inconnu " ${dossier} " : ${url}`)}                             // si le dossier n'est pas dans la configuration, on signale une alerte
 
     // Analyse du texte pour extraire les informations
-    const { infos, realisation, seances } = analyserFiche(texte)
+    const { infos, realisation, seances_brutes, seances, programme_courts } = analyserFiche(texte)
     const type = section?.type ?? 'film'
 
     // Si le type est film, on vérifie que les informations essentielles sont présentes et on signale les alertes si nécessaire
-    if (type === 'film' && !infos) {
-        alertes.push(`Ligne pays/année/durée introuvable : ${titre} (${url})`)
-    } else if (type === 'film' && infos && infos.duree_min === null) {
-        alertes.push(`Durée introuvable : ${titre} (${url})`)
-    }
-    if (type === 'film' && realisation.length === 0) {
-        alertes.push(`Réalisation introuvable : ${titre} (${url})`)
+    for (const ligne of new Set(cachees.map(nettoyer))) {
+        if (!ressembleASeance(ligne)) {continue}
+        const note = jourIncompatible2026(ligne)
+        ? ' (jour incompatible avec 2026 : reste de 2025 ?)'
+        : ' (jours compatibles avec 2026 : séance publiée mais masquée ?)'
+        masques.push(`${titre} → ${ligne}${note}`)
     }
 
+    for (const ligne of seances_brutes) {
+        if (jourIncompatible2026(ligne)) {
+            alertes.push(`Séance VISIBLE au jour incompatible avec 2026 : ${titre} → ${ligne}`)
+        }
+    }
+
+    if (seances_brutes.length > 0 && seances.length === 0) {
+        alertes.push(`Séance(s) visible(s) non comprise(s) : ${titre} → ${seances_brutes.join(' | ')}`)
+    }
+
+    for (const seance of seances) {
+        const jour = Number(seance.debut.slice(8, 10))
+        if (jour < 6 || jour > 15) alertes.push(`Séance hors du festival (6-15 nov.) : ${titre} → ${seance.debut}`)
+        if (!seance.lieu) alertes.push(`Séance sans lieu : ${titre} → ${seance.debut}`)
+    }
+
+    if (type === 'film' && !infos) alertes.push(`Ligne pays/année/durée introuvable : ${titre} (${url})`)
+    else if (type === 'film' && infos && infos.duree_min === null) alertes.push(`Durée introuvable : ${titre} (${url})`)
+    if (type === 'film' && !programme_courts && realisation.length === 0) alertes.push(`Réalisation introuvable : ${titre} (${url})`)
+    
     return {
         id: slugify(titre),
         titre,
@@ -225,6 +251,7 @@ async function lireFiche(page: Page, url: string, alertes: string[]): Promise<Ev
         annee: infos?.annee ?? null,
         duree_min: infos?.duree_min ?? null,
         version: infos?.version ?? null,
+        seances_brutes,
         seances,
     }
 }
@@ -239,6 +266,7 @@ async function main() {
     const contexte = await navigateur.newContext({ userAgent: USER_AGENT, locale: 'fr-FR' })
     const page = await contexte.newPage()
     const alertes: string[] = []
+    const masques: string[] = []
     
     // Lecture de la page programme et extraction des liens vers les fiches
     console.log('Lecture de la page programme…')
@@ -254,9 +282,9 @@ async function main() {
     for (const [i, url] of fiches.entries()) {
         console.log(`[${i + 1}/${fiches.length}] ${url.replace(PREFIXE_FICHES, '')}`)
         try {
-            const evenement = await lireFiche(page, url, alertes)
+            const evenement = await lireFiche(page, url, alertes, masques)
             let id = evenement.id
-            for (let n = 2; ids.has(id); n++) id = `${evenement.id}-${n}`
+            for (let n = 2; ids.has(id); n++) {id = `${evenement.id}-${n}`}
             ids.add(id)
             evenements.push({ ...evenement, id })
         } catch (erreur) {
@@ -282,16 +310,23 @@ async function main() {
     const parSection = SECTIONS.map(
         (s) => `${String(evenements.filter((e) => e.section === s.id).length).padStart(3)}  ${s.nom}`,
     )
+
     const avecSeances = evenements.filter((e) => e.seances.length > 0).length
+    const nbSeances = evenements.reduce((n, e) => n + e.seances.length, 0)
+    const lieux = [...new Set(evenements.flatMap((e) => e.seances.map((s) => s.lieu ?? '(sans lieu)')))].sort()
     const rapport = [
         `Fiches lues : ${evenements.length} / ${fiches.length}`,
-        `Fiches avec séances visibles : ${avecSeances}`,
+        `Fiches avec séances lues : ${avecSeances} (${nbSeances} séances au total)`,
+        `Lieux rencontrés : ${lieux.join(' ; ') || 'aucun'}`,
         '',
         'Par section :',
         ...parSection,
         '',
         `Alertes (${alertes.length}) :`,
         ...alertes.map((a) => `- ${a}`),
+        '',
+        `Séances masquées ignorées (${masques.length}) :`,
+        ...masques.map((m) => `- ${m}`),
     ].join('\n')
     await writeFile(path.join(DOSSIER_BRUT, 'rapport.txt'), rapport, 'utf-8')
     console.log('\n' + rapport)

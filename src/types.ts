@@ -1,5 +1,11 @@
 export type TypeEvenement = 'film' | 'rencontre' | 'cine-concert' | 'after'
 
+export interface Seance {
+    debut: string
+    lieu: string | null
+    statut: 'ok' | 'a_verifier'
+}
+
 export interface Section {
     id: string
     nom: string
@@ -19,6 +25,7 @@ export interface Evenement {
     duree_min: number | null
     version: string | null
     seances_brutes: string[]
+    seances: Seance[]
 }
 
 export interface Programme {

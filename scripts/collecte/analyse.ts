@@ -33,7 +33,7 @@ export function lireDuree(texte: string): number | null {
 // Interface pour les informations extraites d'une ligne de texte
 export interface Infos {
     pays: string[]
-    annee: number
+    annee: number | null
     duree_min: number | null
     version: string | null
 }
@@ -42,6 +42,12 @@ export interface Infos {
 // Ligne du type "Kosovo, Suisse, 2026, 1h41, vostf"
 export function lireLigneInfos(ligne: string): Infos | null {
     if (ligne.length > 150) {return null}                               // ligne trop longue pour contenir des informations fiables
+    const dureeSeule = ligne.match(/^(\d+\s*h\s*\d{0,2}|\d+\s*min)\s*(?:,|$)/i)
+    
+    if (dureeSeule) {
+        return { pays: [], annee: null, duree_min: lireDuree(dureeSeule[1]), version: null }
+    }
+
     const morceaux = ligne.split(',').map(nettoyer)                     // nettoyage des morceaux de texte
     const iAnnee = morceaux.findIndex((m) => /^(19|20)\d{2}$/.test(m))  // recherche de l'année (4 chiffres commençant par 19 ou 20)
     if (iAnnee < 1) {return null}                                       // si l'année est absente ou en première position, on ne peut pas extraire d'informations fiables
@@ -88,24 +94,111 @@ export function lireRealisation(lignes: string[]): string[] {
 // Constante pour détecter les dates dans le texte
 const JOUR_NOVEMBRE = /(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\s+\d{1,2}(?:er)?\s+novembre/i
  
+export function ressembleASeance(ligne: string): boolean {
+    return ligne.length < 200 && JOUR_NOVEMBRE.test(ligne)
+}
+ 
+const NOMS_JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi']
+
+
+// Jours mal notés dans le programme 2026
+export function jourIncompatible2026(ligne: string): boolean {
+    const re = /(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\s+(\d{1,2})(?:er)?\s+novembre/gi
+    for (const m of ligne.matchAll(re)) {
+        const jour = new Date(Date.UTC(2026, 10, Number(m[2]))).getUTCDay()
+        if (NOMS_JOURS[jour] !== m[1].toLowerCase()) {return true}
+    }
+    return false
+}
+
+// Films en plusieurs parties 
+export function lireDureeParties(lignes: string[]): number | null {
+    let total = 0
+    let trouve = false
+    for (const ligne of lignes) {
+        if (!/^\d+\s*(?:ère|ere|re|ème|eme|e|er)\s+partie/i.test(ligne)) {continue}
+        const m = ligne.match(/\((?:durée\s*:\s*)?(\d+\s*h\s*\d{0,2}|\d+\s*min)\)/i)
+        const duree = m ? lireDuree(m[1]) : null
+        if (duree !== null) {
+            total += duree
+            trouve = true
+        }
+    }
+    return trouve ? total : null
+}
+
+// Détection d'un programme de courts-métrages
+export function estProgrammeCourts(lignes: string[]): boolean {
+    return lignes.some((l) => /^un programme de \d+ courts?[- ]?m[ée]trages?/i.test(l))
+}
+
+
 // Extraction des lignes de texte qui ressemblent à des séances de projection
-export function lireSeances(lignes: string[]): string[] {
+export function lireSeancesBrutes(lignes: string[]): string[] {
     const resultat: string[] = []
-    lignes.forEach((ligne, i) => {                                                      // pour chaque ligne, on cherche un motif de type "Jour Mois" (ex: "Samedi 15 novembre")
-        if (JOUR_NOVEMBRE.test(ligne) && ligne.length < 200) {                          // si on trouve un motif, on ajoute la ligne au résultat (si elle n'est pas trop longue)
+    lignes.forEach((ligne, i) => {
+        if (ressembleASeance(ligne)) {
             resultat.push(ligne)
             const suivante = lignes[i + 1]
-            if (suivante && /^en présence/i.test(suivante)) {resultat.push(suivante)}   // si la ligne suivante commence par "En présence", on l'ajoute aussi au résultat
+            if (suivante && /^en présence/i.test(suivante)) {resultat.push(suivante)}
         }
     })
     return resultat
 }
 
+// Interface pour une séance de projection
+export interface Seance {
+    debut: string 
+    lieu: string | null
+    statut: 'ok' | 'a_verifier'
+}
+
+const OCCURRENCE_SEANCE =
+/(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\s+(\d{1,2})(?:er)?\s+novembre(?:\s+2026)?\s+à\s+(\d{1,2})\s*h\s*(\d{2})?/gi
+ 
+const deuxChiffres = (n: number | string) => String(n).padStart(2, '0')
+
+// Extraction des séances de projection à partir d'un tableau 
+export function lireSeances(lignes: string[]): Seance[] {
+    const seances: Seance[] = []
+    for (const ligne of lignes) {
+        if (!ressembleASeance(ligne)) {continue}
+        const trouvees = [...ligne.matchAll(OCCURRENCE_SEANCE)]
+        if (trouvees.length === 0) {continue}
+    
+        const lieux: (string | null)[] = trouvees.map((m, i) => {
+            const debutReste = (m.index ?? 0) + m[0].length
+            const finReste = trouvees[i + 1]?.index ?? ligne.length
+            const reste = ligne.slice(debutReste, finReste)
+            const lieu = reste.match(/^\s*(?:au|à la|à l['’]|aux|à)\s+(.+?)\s*[,;.]?\s*$/i)
+            return lieu ? nettoyer(lieu[1]) : null
+        })
+
+        let suivant: string | null = null
+        for (let i = lieux.length - 1; i >= 0; i--) {
+            if (lieux[i] === null) {lieux[i] = suivant}
+            else {suivant = lieux[i]}
+        }
+    
+        trouvees.forEach((m, i) => {
+            seances.push({
+                debut: `2026-11-${deuxChiffres(m[2])}T${deuxChiffres(m[3])}:${m[4] ?? '00'}`,
+                lieu: lieux[i],
+                statut: jourIncompatible2026(`${m[1]} ${m[2]} novembre`) ? 'a_verifier' : 'ok',
+            })
+        })
+    }
+    return seances
+}
+
+
 // Interface pour le résultat de l'analyse d'une fiche film
 export interface ResultatFiche {
     infos: Infos | null
     realisation: string[]
-    seances: string[]
+    seances_brutes: string[]
+    seances: Seance[]
+    programme_courts: boolean
 }
 
 // Analyse d'une fiche film à partir d'un texte brut
@@ -114,10 +207,19 @@ export function analyserFiche(texte: string): ResultatFiche {
         .split(/\r?\n/)
         .map(nettoyer)
         .filter(Boolean)
+    let infos = lignes.map(lireLigneInfos).find((i) => i !== null) ?? null
+
+    if (infos && infos.duree_min === null) {
+        const parties = lireDureeParties(lignes)
+        if (parties !== null) {infos = { ...infos, duree_min: parties }}
+    }
+
     return {
-        infos: lignes.map(lireLigneInfos).find((i) => i !== null) ?? null,
+        infos,
         realisation: lireRealisation(lignes),
+        seances_brutes: lireSeancesBrutes(lignes),
         seances: lireSeances(lignes),
+        programme_courts: estProgrammeCourts(lignes),
     }
 }
 
