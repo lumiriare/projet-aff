@@ -8,14 +8,31 @@ interface Props {
     onEffacer: () => void
 }
 
+// Replié par défaut : la grille ne s'ouvre que quand on veut dire quand on est libre,
+// et le nombre de créneaux choisis reste visible quand elle est fermée
 export default function GrilleDispo({ dispos, nbSeancesPossibles, onBasculer, onEffacer }: Props) {
     const actif = aDesDispo(dispos)
+    const nbCreneaux = Object.values(dispos).reduce((n, moments) => n + moments.length, 0)
 
     return (
-        <section aria-labelledby="titre-dispos">
-            <h2 id="titre-dispos" className="font-bold">
-                Je suis libre
-            </h2>
+        <details className="group">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 font-bold [&::-webkit-details-marker]:hidden">
+                <span>Je suis libre</span>
+                <span className="flex items-center gap-2">
+                    {nbCreneaux > 0 && (
+                        <span className="border-2 border-encre px-2 text-[0.85rem]">
+                            {nbCreneaux} créneau{nbCreneaux > 1 ? 'x' : ''}
+                        </span>
+                    )}
+                    <span aria-hidden="true" className="group-open:hidden">
+                        +
+                    </span>
+                    <span aria-hidden="true" className="hidden group-open:inline">
+                        −
+                    </span>
+                </span>
+            </summary>
+
             <p className="text-secondaire text-[0.85rem] leading-snug">
                 Touchez autant de cases que vous voulez : plusieurs jours, plusieurs moments.
             </p>
@@ -71,6 +88,6 @@ export default function GrilleDispo({ dispos, nbSeancesPossibles, onBasculer, on
                     </button>
                 </div>
             )}
-        </section>
+        </details>
     )
 }
