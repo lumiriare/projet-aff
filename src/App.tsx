@@ -5,6 +5,7 @@ import GrilleDispo from './components/GrilleDispo'
 import ListeJour from './components/ListeJour'
 import PageSelection from './components/PageSelection'
 import PanneauSelection from './components/PanneauSelection'
+import ParTheme from './components/ParTheme'
 import { JOURS_FESTIVAL, jourCourt, jourLong, normaliser, numeroJour } from './format'
 import { useDispo } from './hooks/useDispo'
 import { useSelection } from './hooks/useSelection'
@@ -18,7 +19,13 @@ const SEANCES_PAR_ID = new Map(TOUTES_LES_SEANCES.map((s) => [s.id, s]))
 const LIEUX = [...new Set(TOUTES_LES_SEANCES.map((s) => s.seance.lieu).filter((l): l is string => l !== null))].sort()
 const NOM_SECTION = new Map(programme.sections.map((s) => [s.id, s.nom]))
 
-type Vue = 'programme' | 'selection'
+// Les séances de chaque film, pour la vue « Par thème »
+const SEANCES_PAR_EVENEMENT = new Map<string, SeanceFestival[]>()
+for (const s of TOUTES_LES_SEANCES) {
+    SEANCES_PAR_EVENEMENT.set(s.evenement.id, [...(SEANCES_PAR_EVENEMENT.get(s.evenement.id) ?? []), s])
+}
+
+type Vue = 'programme' | 'theme' | 'selection'
 
 export default function App() {
     const [vue, setVue] = useState<Vue>('programme')
@@ -75,25 +82,37 @@ export default function App() {
             <header className="border-b-2 border-encre print:hidden">
                 <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3">
                     <p className="text-xl font-bold">AFF - Programme Interactif</p>
-                    <nav aria-label="Navigation principale" className="flex gap-2">
+                    {/* Sur téléphone, la barre du bas mène déjà à la sélection : on ne la répète pas ici */}
+                    <button
+                        type="button"
+                        aria-current={vue === 'selection' ? 'page' : undefined}
+                        onClick={() => setVue('selection')}
+                        className={`hidden min-h-11 border-2 border-encre px-3 font-bold lg:block ${vue === 'selection' ? 'bg-encre text-papier' : ''}`}
+                    >
+                        Ma sélection · {selection.length}
+                    </button>
+                </div>
+
+                {vue !== 'selection' && (
+                    <nav aria-label="Vues du programme" className="mx-auto flex max-w-7xl">
                         <button
                             type="button"
                             aria-current={vue === 'programme' ? 'page' : undefined}
                             onClick={() => setVue('programme')}
-                            className={`min-h-11 border-2 border-encre px-3 font-bold ${vue === 'programme' ? 'bg-encre text-papier' : ''}`}
+                            className={`min-h-12 flex-1 border-b-4 px-3 font-bold ${vue === 'programme' ? 'border-encre' : 'text-secondaire border-transparent'}`}
                         >
                             Programme
                         </button>
                         <button
                             type="button"
-                            aria-current={vue === 'selection' ? 'page' : undefined}
-                            onClick={() => setVue('selection')}
-                            className={`min-h-11 border-2 border-encre px-3 font-bold ${vue === 'selection' ? 'bg-encre text-papier' : ''}`}
+                            aria-current={vue === 'theme' ? 'page' : undefined}
+                            onClick={() => setVue('theme')}
+                            className={`min-h-12 flex-1 border-b-4 px-3 font-bold ${vue === 'theme' ? 'border-encre' : 'text-secondaire border-transparent'}`}
                         >
-                            Ma sélection · {selection.length}
+                            Par thème
                         </button>
                     </nav>
-                </div>
+                )}
             </header>
 
             {vue === 'selection' ? (
@@ -103,6 +122,25 @@ export default function App() {
                     onVider={vider}
                     onRetour={() => setVue('programme')}
                 />
+            ) : vue === 'theme' ? (
+                <main className="mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,1fr)_19rem]">
+                    <ParTheme
+                        sections={programme.sections}
+                        evenements={programme.evenements}
+                        seancesParEvenement={SEANCES_PAR_EVENEMENT}
+                        selection={selection}
+                        onBasculer={basculer}
+                    />
+                    <aside className="hidden border-l-2 border-encre p-4 lg:block">
+                        <div className="sticky top-4">
+                            <PanneauSelection
+                                selection={selection}
+                                onRetirer={retirer}
+                                onVoirPlanning={() => setVue('selection')}
+                            />
+                        </div>
+                    </aside>
+                </main>
             ) : (
                 <main className="mx-auto grid max-w-7xl lg:grid-cols-[16rem_minmax(0,1fr)_19rem]">
                     <aside className="hidden border-r-2 border-encre p-4 lg:block">
@@ -222,7 +260,7 @@ export default function App() {
                 </main>
             )}
 
-            {vue === 'programme' && (
+            {vue !== 'selection' && (
                 <div className="fixed inset-x-0 bottom-0 flex items-center justify-between gap-3 border-t-2 border-encre bg-papier px-4 py-3 lg:hidden">
                     <span>
                         <strong>{selection.length}</strong> séance{selection.length > 1 ? 's' : ''} choisie
