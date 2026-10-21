@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+
+@theme {
+    --color-papier: #ffffff;
+    --color-encre: #111111;
+    --color-secondaire: #444444; 
+    --color-filet: #888888;
+    --color-fond-leger: #ececec;
+}
+
 html {
-    font-size: 18px; /* texte de base plus grand pour la lisibilité */
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--color-papier);
+    color: var(--color-encre);
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-encre);
+    outline-offset: 2px;
 }

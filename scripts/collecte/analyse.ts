@@ -42,7 +42,7 @@ export interface Infos {
 // Ligne du type "Kosovo, Suisse, 2026, 1h41, vostf"
 export function lireLigneInfos(ligne: string): Infos | null {
     if (ligne.length > 150) {return null}                               // ligne trop longue pour contenir des informations fiables
-    const dureeSeule = ligne.match(/^(\d+\s*h\s*\d{0,2}|\d+\s*min)\s*(?:,|$)/i)
+    const dureeSeule = ligne.match(/^(?:durée\s*:\s*)?(\d+\s*h\s*\d{0,2}|\d+\s*min)\s*(?:,|$)/i)
     
     if (dureeSeule) {
         return { pays: [], annee: null, duree_min: lireDuree(dureeSeule[1]), version: null }
@@ -91,26 +91,6 @@ export function lireRealisation(lignes: string[]): string[] {
     return []
 }
 
-// Constante pour détecter les dates dans le texte
-const JOUR_NOVEMBRE = /(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\s+\d{1,2}(?:er)?\s+novembre/i
- 
-export function ressembleASeance(ligne: string): boolean {
-    return ligne.length < 200 && JOUR_NOVEMBRE.test(ligne)
-}
- 
-const NOMS_JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi']
-
-
-// Jours mal notés dans le programme 2026
-export function jourIncompatible2026(ligne: string): boolean {
-    const re = /(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\s+(\d{1,2})(?:er)?\s+novembre/gi
-    for (const m of ligne.matchAll(re)) {
-        const jour = new Date(Date.UTC(2026, 10, Number(m[2]))).getUTCDay()
-        if (NOMS_JOURS[jour] !== m[1].toLowerCase()) {return true}
-    }
-    return false
-}
-
 // Films en plusieurs parties 
 export function lireDureeParties(lignes: string[]): number | null {
     let total = 0
@@ -133,6 +113,29 @@ export function estProgrammeCourts(lignes: string[]): boolean {
 }
 
 
+// SEANCES // 
+
+// Constante pour détecter les dates dans le texte
+const JOUR_NOVEMBRE = /(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\s+\d{1,2}(?:er)?\s+novembre/i
+ 
+export function ressembleASeance(ligne: string): boolean {
+    return ligne.length < 200 && JOUR_NOVEMBRE.test(ligne)
+}
+ 
+const NOMS_JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi']
+
+
+// Jours mal notés dans le programme 2026
+export function jourIncompatible2026(ligne: string): boolean {
+    const re = /(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\s+(\d{1,2})(?:er)?\s+novembre/gi
+    for (const m of ligne.matchAll(re)) {
+        const jour = new Date(Date.UTC(2026, 10, Number(m[2]))).getUTCDay()
+        if (NOMS_JOURS[jour] !== m[1].toLowerCase()) {return true}
+    }
+    return false
+}
+
+
 // Extraction des lignes de texte qui ressemblent à des séances de projection
 export function lireSeancesBrutes(lignes: string[]): string[] {
     const resultat: string[] = []
@@ -140,7 +143,7 @@ export function lireSeancesBrutes(lignes: string[]): string[] {
         if (ressembleASeance(ligne)) {
             resultat.push(ligne)
             const suivante = lignes[i + 1]
-            if (suivante && /^en présence/i.test(suivante)) {resultat.push(suivante)}
+            if (suivante && /^\**\s*en présence/i.test(suivante)) {resultat.push(suivante)}
         }
     })
     return resultat
@@ -150,45 +153,169 @@ export function lireSeancesBrutes(lignes: string[]): string[] {
 export interface Seance {
     debut: string 
     lieu: string | null
+    presence: string | null
     statut: 'ok' | 'a_verifier'
+    duree_min?: number | null // durée de la séance quand la fiche donne une plage horaire (« de 23h à 1h »)
 }
 
 const OCCURRENCE_SEANCE =
-/(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\s+(\d{1,2})(?:er)?\s+novembre(?:\s+2026)?\s+à\s+(\d{1,2})\s*h\s*(\d{2})?/gi
+/(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\s+(\d{1,2})(?:er)?\s+novembre(?:\s+2026)?(?:\s*(?:à\s*)?(\d{1,2})\s*h\s*(\d{2})?)?/gi
  
 const deuxChiffres = (n: number | string) => String(n).padStart(2, '0')
 
-// Extraction des séances de projection à partir d'un tableau 
+// Normalisation du nom du lieu de projection
+export function normaliserLieu(brut: string): string {
+    const propre = nettoyer(brut.split(/\s+en présence|\s*\(/i)[0]).replace(/[\s*.,;]+$/g, '')
+    const cle = slugify(propre)
+    if (cle.includes('casino')) {return "Casino d'Arras"}
+    if (cle.includes('megarama')) {return 'Megarama Arras'}
+    if (cle.includes('chapelle')) {return 'Chapelle du Pôle culturel Saint-Pierre'}
+    if (cle.includes('village')) {return 'Village du festival'}
+    if (cle.includes('churchill')) {return "Université d'Artois - Amphithéâtre Churchill"}
+    return propre
+}
+
+// Extraction de la présence d'une personne 
+function extrairePresence(texte: string): string | null {
+    const m = texte.match(/en présence\s+(?:de\s+|d['’]\s*)?(.+?)[\s*]*$/i)
+    return m ? nettoyer(m[1]) : null
+}
+
+// Plage horaire écrite sur la ligne qui suit une date : « De 23h à 1h au Village du festival »
+// (aussi « À partir de 23h », « À 21h30 au Casino d'Arras »)
+const PLAGE_HORAIRE =
+/^(?:de|à partir de|dès|à)\s+(\d{1,2})\s*h\s*(\d{2})?(?:\s+(?:à|jusqu['’]à)\s+(?:(\d{1,2})\s*h\s*(\d{2})?|(minuit)))?(?:\s+(?:(?:au|aux|à la|à)\s+|à l['’])(.+))?$/i
+
+export interface PlageHoraire {
+    heure: string // « 23:00 »
+    duree_min: number | null // « de 23h à 1h » → 120 (la fin peut tomber après minuit)
+    lieu: string | null
+}
+
+export function lirePlageHoraire(ligne: string): PlageHoraire | null {
+    const m = ligne.match(PLAGE_HORAIRE)
+    if (!m) {return null}
+    const debut = Number(m[1]) * 60 + Number(m[2] ?? 0)
+    let duree: number | null = null
+    if (m[3] || m[5]) {
+        let fin = m[5] ? 24 * 60 : Number(m[3]) * 60 + Number(m[4] ?? 0)
+        if (fin <= debut) {fin += 24 * 60}
+        duree = fin - debut
+    }
+    return {
+        heure: `${deuxChiffres(m[1])}:${m[2] ?? '00'}`,
+        duree_min: duree,
+        lieu: m[6] ? normaliserLieu(m[6]) : null,
+    }
+}
+
+// Une séance lue dans une ligne, avec un indicateur : l'heure est-elle suivie d'un astérisque ?
+// (« Samedi 14 novembre à 13h15* » : une ligne « *en présence de… » suit alors, et ne concerne que cette séance)
+interface SeanceLue {
+    seance: Seance
+    etoile: boolean
+}
+
+function lireSeancesDeLaLigne(ligne: string): SeanceLue[] {
+    const trouvees = [...ligne.matchAll(OCCURRENCE_SEANCE)]
+    if (trouvees.length === 0) {return []}
+
+    const restes = trouvees.map((m, i) => {
+        const debutReste = (m.index ?? 0) + m[0].length
+        const finReste = trouvees[i + 1]?.index ?? ligne.length
+        return ligne.slice(debutReste, finReste)
+    })
+
+    // Le lieu suit l'heure (« au Megarama Arras », « - Megarama »), parfois après un astérisque
+    const lieux: (string | null)[] = restes.map((reste) => {
+        const m = reste.match(/^\s*\**\s*(?:(?:au|aux|à la|à)\s+|à l['’]|[-–—]\s*)(.+)$/i)
+        return m ? normaliserLieu(m[1]) : null
+    })
+
+    // Un lieu écrit une seule fois à la fin s'applique aux séances qui précèdent
+    let suivant: string | null = null
+    for (let i = lieux.length - 1; i >= 0; i--) {
+        if (lieux[i] === null) {lieux[i] = suivant}
+        else {suivant = lieux[i]}
+    }
+
+    return trouvees.map((m, i) => {
+        const heure = m[3] ? `T${deuxChiffres(m[3])}:${m[4] ?? '00'}` : ''
+        return {
+            etoile: /^\s*\*/.test(restes[i]),
+            seance: {
+                debut: `2026-11-${deuxChiffres(m[2])}${heure}`,
+                lieu: lieux[i],
+                presence: extrairePresence(restes[i]),
+                statut: jourIncompatible2026(`${m[1]} ${m[2]} novembre`) ? 'a_verifier' : 'ok',
+            },
+        }
+    })
+}
+
+export function lireLigneSeances(ligne: string): Seance[] {
+    return lireSeancesDeLaLigne(ligne).map((l) => l.seance)
+}
+
+// Extraction des séances à partir des lignes visibles ; une ligne « en présence de… » qui suit s'y rattache
 export function lireSeances(lignes: string[]): Seance[] {
     const seances: Seance[] = []
-    for (const ligne of lignes) {
-        if (!ressembleASeance(ligne)) {continue}
-        const trouvees = [...ligne.matchAll(OCCURRENCE_SEANCE)]
-        if (trouvees.length === 0) {continue}
-    
-        const lieux: (string | null)[] = trouvees.map((m, i) => {
-            const debutReste = (m.index ?? 0) + m[0].length
-            const finReste = trouvees[i + 1]?.index ?? ligne.length
-            const reste = ligne.slice(debutReste, finReste)
-            const lieu = reste.match(/^\s*(?:au|à la|à l['’]|aux|à)\s+(.+?)\s*[,;.]?\s*$/i)
-            return lieu ? nettoyer(lieu[1]) : null
-        })
+    lignes.forEach((ligne, index) => {
+        if (!ressembleASeance(ligne)) {return}
+        const lues = lireSeancesDeLaLigne(ligne)
+        const suivante = lignes[index + 1]
 
-        let suivant: string | null = null
-        for (let i = lieux.length - 1; i >= 0; i--) {
-            if (lieux[i] === null) {lieux[i] = suivant}
-            else {suivant = lieux[i]}
+        // Date seule, puis l'horaire sur la ligne suivante : « Lundi 9 novembre 2026 » / « De 23h à 1h au Village du festival »
+        const sansHeure = lues.filter((l) => l.seance.debut.length === 10)
+        const plage = sansHeure.length === 1 && suivante ? lirePlageHoraire(suivante) : null
+        if (plage) {
+            const s = sansHeure[0].seance
+            s.debut = `${s.debut}T${plage.heure}`
+            s.duree_min = plage.duree_min
+            s.lieu = s.lieu ?? plage.lieu
         }
-    
-        trouvees.forEach((m, i) => {
-            seances.push({
-                debut: `2026-11-${deuxChiffres(m[2])}T${deuxChiffres(m[3])}:${m[4] ?? '00'}`,
-                lieu: lieux[i],
-                statut: jourIncompatible2026(`${m[1]} ${m[2]} novembre`) ? 'a_verifier' : 'ok',
-            })
-        })
-    }
+
+        if (suivante && /^\**\s*en présence/i.test(suivante)) {
+            const presence = extrairePresence(suivante)
+            // Avec un astérisque, la présence ne concerne que les séances marquées ; sinon, toutes
+            const marquees = lues.some((l) => l.etoile)
+            for (const l of lues) {
+                if (!marquees || l.etoile) {l.seance.presence ??= presence}
+            }
+        }
+        seances.push(...lues.map((l) => l.seance))
+    })
     return seances
+}
+
+// Complète les séances visibles avec le résumé public de la fiche (meta description) :
+// il donne le lieu quand la séance n'en a pas, et les dates des événements dont seul le jour est publié
+export function fusionnerSeances(visibles: Seance[], resume: Seance[]): Seance[] {
+    const resultat = visibles.map((s) => ({ ...s }))
+    for (const r of resume) {
+        const jour = r.debut.slice(0, 10)
+        const memeJour = resultat.filter((s) => s.debut.slice(0, 10) === jour)
+        if (memeJour.length === 0) {resultat.push({ ...r })}
+        else for (const s of memeJour) {s.lieu ??= r.lieu}
+    }
+
+    // Une date sans heure ne sert à rien quand ce jour a déjà une séance avec heure :
+    // on en garde le lieu, puis on la retire
+    const avecHeure = resultat.filter((s) => s.debut.length > 10)
+    for (const s of resultat.filter((s) => s.debut.length === 10)) {
+        for (const o of avecHeure.filter((o) => o.debut.slice(0, 10) === s.debut)) {o.lieu ??= s.lieu}
+    }
+    return resultat
+        .filter((s) => s.debut.length > 10 || !avecHeure.some((o) => o.debut.slice(0, 10) === s.debut))
+        .sort((a, b) => a.debut.localeCompare(b.debut))
+}
+
+
+// Lieu par défaut d'une section dont tous les événements ont lieu au même endroit
+// (par exemple les afters musicaux : le village du festival). Un lieu déjà lu n'est pas remplacé.
+export function appliquerLieuParDefaut(seances: Seance[], lieu: string | undefined): Seance[] {
+    if (!lieu) {return seances}
+    return seances.map((s) => ({ ...s, lieu: s.lieu ?? lieu }))
 }
 
 
@@ -202,7 +329,7 @@ export interface ResultatFiche {
 }
 
 // Analyse d'une fiche film à partir d'un texte brut
-export function analyserFiche(texte: string): ResultatFiche {
+export function analyserFiche(texte: string, description: string | null = null): ResultatFiche {
     const lignes = texte
         .split(/\r?\n/)
         .map(nettoyer)
@@ -214,11 +341,13 @@ export function analyserFiche(texte: string): ResultatFiche {
         if (parties !== null) {infos = { ...infos, duree_min: parties }}
     }
 
+    const resume = description ? lireLigneSeances(nettoyer(description)) : []
+
     return {
         infos,
         realisation: lireRealisation(lignes),
         seances_brutes: lireSeancesBrutes(lignes),
-        seances: lireSeances(lignes),
+        seances: fusionnerSeances(lireSeances(lignes), resume),
         programme_courts: estProgrammeCourts(lignes),
     }
 }

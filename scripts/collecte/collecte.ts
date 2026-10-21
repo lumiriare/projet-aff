@@ -8,7 +8,7 @@
 import { chromium, type Page } from "playwright"
 import { mkdir, writeFile } from "node:fs/promises"
 import path from "node:path"
-import { analyserFiche, nettoyer, slugify, jourIncompatible2026, ressembleASeance, type Seance } from "./analyse.ts"
+import { analyserFiche, appliquerLieuParDefaut, nettoyer, slugify, jourIncompatible2026, ressembleASeance, type Seance } from "./analyse.ts"
 
 // Constantes pour la collecte des données
 const URL_PROGRAMME = 'https://www.arrasfilmfestival.com/pages/le-festival/programme-edition/'
@@ -21,6 +21,7 @@ const PAUSE_MS = 800
 // Dossier de stockage des données collectées
 const DOSSIER_DONNEES = path.resolve('data')
 const DOSSIER_BRUT = path.join(DOSSIER_DONNEES, 'raw')
+const LIEUX_CONNUS = ["Casino d'Arras", 'Megarama Arras', 'Chapelle du Pôle culturel Saint-Pierre', 'Village du festival', "Université d'Artois - Amphithéâtre Churchill"]
 
 type TypeEvenement = 'film' | 'rencontre' | 'cine-concert' | 'after'
 
@@ -31,6 +32,7 @@ interface SectionConfig {
     parent: string | null
     type: TypeEvenement
     dossiers: string[] // dossiers d'adresse correspondants sur le site officiel
+    lieuParDefaut?: string // lieu de toutes les séances de la section, quand la fiche n'en donne pas
 }
 
 
@@ -39,7 +41,8 @@ const SECTIONS: SectionConfig[] = [
     { 
         id: 'ouverture', 
         nom: "Film d'ouverture", 
-        parent: null, type: 'film', 
+        parent: null,
+        type: 'film', 
         dossiers: ['film-d-ouverture'] 
     },
     { 
@@ -153,7 +156,8 @@ const SECTIONS: SectionConfig[] = [
         nom: 'Afters musicaux', 
         parent: null, 
         type: 'after', 
-        dossiers: ['afters-musicaux'] 
+        dossiers: ['afters-musicaux'],
+        lieuParDefaut: 'Village du festival'
     },
 ]
 
@@ -175,11 +179,18 @@ interface Evenement {
     seances: Seance[]
 }
 
+// Texte présent dans le code d'une fiche mais masqué à l'affichage
+interface TexteMasque {
+    titre: string
+    ligne: string
+    incompatible: boolean // jour de la semaine impossible en 2026 (reste de 2025 ?)
+}
+
 const attendre = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
 
 // Lecture d'une fiche film à partir de son URL
-async function lireFiche(page: Page, url: string, alertes: string[], masques: string[]): Promise<Evenement> {
+async function lireFiche(page: Page, url: string, alertes: string[], masques: TexteMasque[]): Promise<Evenement> {
 
     // Chargement de la page et lecture du texte affiché
     await page.goto(url, { waitUntil: 'domcontentloaded' })
@@ -187,6 +198,9 @@ async function lireFiche(page: Page, url: string, alertes: string[], masques: st
     const texte = await page.evaluate(() => document.body.innerText)
     const affiche = await page.evaluate(
         () => document.querySelector('meta[property="og:image"]')?.getAttribute('content') ?? null,
+    )
+    const description = await page.evaluate(
+        () => document.querySelector('meta[property="og:description"]')?.getAttribute('content') ?? null,
     )
     const cachees = await page.evaluate(() =>
         Array.from(document.body.querySelectorAll('h1,h2,h3,h4,h5,h6,p,li,span,div'))
@@ -207,16 +221,16 @@ async function lireFiche(page: Page, url: string, alertes: string[], masques: st
     if (!section) {alertes.push(`Dossier inconnu " ${dossier} " : ${url}`)}                             // si le dossier n'est pas dans la configuration, on signale une alerte
 
     // Analyse du texte pour extraire les informations
-    const { infos, realisation, seances_brutes, seances, programme_courts } = analyserFiche(texte)
+    const { infos, realisation, seances_brutes, seances: seancesLues, programme_courts } = analyserFiche(texte, description)
+    // Les afters musicaux ont tous lieu au village du festival
+    const seances = appliquerLieuParDefaut(seancesLues, section?.lieuParDefaut)
     const type = section?.type ?? 'film'
 
     // Si le type est film, on vérifie que les informations essentielles sont présentes et on signale les alertes si nécessaire
     for (const ligne of new Set(cachees.map(nettoyer))) {
         if (!ressembleASeance(ligne)) {continue}
-        const note = jourIncompatible2026(ligne)
-        ? ' (jour incompatible avec 2026 : reste de 2025 ?)'
-        : ' (jours compatibles avec 2026 : séance publiée mais masquée ?)'
-        masques.push(`${titre} → ${ligne}${note}`)
+        if (description && ligne === nettoyer(description)) {continue}
+        masques.push({ titre, ligne, incompatible: jourIncompatible2026(ligne) })
     }
 
     for (const ligne of seances_brutes) {
@@ -233,11 +247,16 @@ async function lireFiche(page: Page, url: string, alertes: string[], masques: st
         const jour = Number(seance.debut.slice(8, 10))
         if (jour < 6 || jour > 15) alertes.push(`Séance hors du festival (6-15 nov.) : ${titre} → ${seance.debut}`)
         if (!seance.lieu) alertes.push(`Séance sans lieu : ${titre} → ${seance.debut}`)
+        else if (!LIEUX_CONNUS.includes(seance.lieu)) alertes.push(`Lieu inconnu « ${seance.lieu} » : ${titre} → ${seance.debut}`)
     }
 
     if (type === 'film' && !infos) alertes.push(`Ligne pays/année/durée introuvable : ${titre} (${url})`)
     else if (type === 'film' && infos && infos.duree_min === null) alertes.push(`Durée introuvable : ${titre} (${url})`)
-    if (type === 'film' && !programme_courts && realisation.length === 0) alertes.push(`Réalisation introuvable : ${titre} (${url})`)
+
+    // Un programme de courts métrages ou une séance jeune public (sans pays) n'a pas de réalisateur unique
+    if (type === 'film' && infos && infos.pays.length > 0 && !programme_courts && realisation.length === 0) {
+        alertes.push(`Réalisation introuvable : ${titre} (${url})`)
+    }
     
     return {
         id: slugify(titre),
@@ -266,7 +285,7 @@ async function main() {
     const contexte = await navigateur.newContext({ userAgent: USER_AGENT, locale: 'fr-FR' })
     const page = await contexte.newPage()
     const alertes: string[] = []
-    const masques: string[] = []
+    const masques: TexteMasque[] = []
     
     // Lecture de la page programme et extraction des liens vers les fiches
     console.log('Lecture de la page programme…')
@@ -313,10 +332,29 @@ async function main() {
 
     const avecSeances = evenements.filter((e) => e.seances.length > 0).length
     const nbSeances = evenements.reduce((n, e) => n + e.seances.length, 0)
+    const sansHeure = evenements.reduce((n, e) => n + e.seances.filter((s) => s.debut.length === 10).length, 0)
     const lieux = [...new Set(evenements.flatMap((e) => e.seances.map((s) => s.lieu ?? '(sans lieu)')))].sort()
+    const avecPresence = evenements.filter((e) => e.seances.some((s) => s.presence)).length
+ 
+    // Textes masqués : regroupés par texte identique (le même reste est recopié sur plusieurs fiches)
+    const groupes = new Map<string, { incompatible: boolean, titres: string[] }>()
+
+    for (const m of masques) {
+        const groupe = groupes.get(m.ligne) ?? { incompatible: m.incompatible, titres: [] }
+        groupe.titres.push(m.titre)
+        groupes.set(m.ligne, groupe)
+    }
+
+    const lignesMasquees = [...groupes.entries()]
+        .sort((a, b) => b[1].titres.length - a[1].titres.length)
+        .map(([ligne, g]) => `- x${g.titres.length} ${g.incompatible ? '[reste de 2025 ?]' : '[jours compatibles 2026]'} « ${ligne} » : ${g.titres.join(', ')}`)
+    
+        const fichesRestes2025 = new Set(masques.filter((m) => m.incompatible).map((m) => m.titre)).size
+ 
     const rapport = [
         `Fiches lues : ${evenements.length} / ${fiches.length}`,
-        `Fiches avec séances lues : ${avecSeances} (${nbSeances} séances au total)`,
+        `Fiches avec séances lues : ${avecSeances} (${nbSeances} séances, dont ${sansHeure} sans heure)`,
+        `Fiches avec une présence annoncée : ${avecPresence}`,
         `Lieux rencontrés : ${lieux.join(' ; ') || 'aucun'}`,
         '',
         'Par section :',
@@ -325,9 +363,10 @@ async function main() {
         `Alertes (${alertes.length}) :`,
         ...alertes.map((a) => `- ${a}`),
         '',
-        `Séances masquées ignorées (${masques.length}) :`,
-        ...masques.map((m) => `- ${m}`),
+        `Textes masqués ignorés : ${groupes.size} textes différents, dont ${fichesRestes2025} fiches avec des restes de 2025 :`,
+        ...lignesMasquees,
     ].join('\n')
+    
     await writeFile(path.join(DOSSIER_BRUT, 'rapport.txt'), rapport, 'utf-8')
     console.log('\n' + rapport)
 }

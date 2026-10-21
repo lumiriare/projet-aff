@@ -110,7 +110,8 @@
       "seances": [
         {
           "debut": "2026-11-06T20:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Clément Michel et des comédiens Kyan Khojandi et Clémentine Célarié",
           "statut": "ok"
         }
       ]
@@ -138,7 +139,8 @@
       "seances": [
         {
           "debut": "2026-11-15T19:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Martin Provost",
           "statut": "ok"
         }
       ]
@@ -161,17 +163,20 @@
       "duree_min": 95,
       "version": "vostf/vosta",
       "seances_brutes": [
-        "VENDREDI 13 NOVEMBRE À 16H00*, DIMANCHE 15 NOVEMBRE À 9H AU MEGARAMA ARRAS"
+        "VENDREDI 13 NOVEMBRE À 16H00*, DIMANCHE 15 NOVEMBRE À 9H AU MEGARAMA ARRAS",
+        "*en présence du réalisateur Petar Valchanov"
       ],
       "seances": [
         {
           "debut": "2026-11-13T16:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Petar Valchanov",
           "statut": "ok"
         },
         {
           "debut": "2026-11-15T09:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -193,17 +198,20 @@
       "duree_min": 97,
       "version": "vostf/vosta",
       "seances_brutes": [
-        "DIMANCHE 15 NOVEMBRE À 13H30*, JEUDI 12 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+        "DIMANCHE 15 NOVEMBRE À 13H30*, JEUDI 12 NOVEMBRE À 16H AU MEGARAMA ARRAS",
+        "*en présence du comédien Vincent Niia et de la productrice Lisa Marie Kristensen"
       ],
       "seances": [
         {
-          "debut": "2026-11-15T13:30",
-          "lieu": "MEGARAMA ARRAS",
+          "debut": "2026-11-12T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
-          "debut": "2026-11-12T16:00",
-          "lieu": "MEGARAMA ARRAS",
+          "debut": "2026-11-15T13:30",
+          "lieu": "Megarama Arras",
+          "presence": "du comédien Vincent Niia et de la productrice Lisa Marie Kristensen",
           "statut": "ok"
         }
       ]
@@ -225,17 +233,20 @@
       "duree_min": 124,
       "version": "vostf/vosta",
       "seances_brutes": [
-        "JEUDI 12 NOVEMBRE À 18H30*, SAMEDI 14 NOVEMBRE À 21H15 AU MEGARAMA ARRAS"
+        "JEUDI 12 NOVEMBRE À 18H30*, SAMEDI 14 NOVEMBRE À 21H15 AU MEGARAMA ARRAS",
+        "*en présence du réalisateur Gábor Holtai et du producteur Attila Veres"
       ],
       "seances": [
         {
           "debut": "2026-11-12T18:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Gábor Holtai et du producteur Attila Veres",
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T21:15",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -257,17 +268,20 @@
       "duree_min": 108,
       "version": "vostf/vosta",
       "seances_brutes": [
-        "VENDREDI 13 NOVEMBRE À 13H15*, SAMEDI 14 NOVEMBRE À 11H AU MEGARAMA ARRAS"
+        "VENDREDI 13 NOVEMBRE À 13H15*, SAMEDI 14 NOVEMBRE À 11H AU MEGARAMA ARRAS",
+        "*en présence du réalisateur Andrius Blazevicius"
       ],
       "seances": [
         {
           "debut": "2026-11-13T13:15",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Andrius Blazevicius",
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T11:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -290,17 +304,20 @@
       "duree_min": 110,
       "version": "vostf/vosta",
       "seances_brutes": [
-        "VENDREDI 13 NOVEMBRE À 9H, SAMEDI 14 NOVEMBRE À 16H* AU MEGARAMA ARRAS"
+        "VENDREDI 13 NOVEMBRE À 9H, SAMEDI 14 NOVEMBRE À 16H* AU MEGARAMA ARRAS",
+        "*en présence de la réalisatrice Andrina Mracnikar et du producteur Alexander Dumreicher-Ivanceanu"
       ],
       "seances": [
         {
           "debut": "2026-11-13T09:00",
-          "lieu": null,
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T16:00",
-          "lieu": null,
+          "lieu": "Megarama Arras",
+          "presence": "la réalisatrice Andrina Mracnikar et du producteur Alexander Dumreicher-Ivanceanu",
           "statut": "ok"
         }
       ]
@@ -322,17 +339,20 @@
       "duree_min": 90,
       "version": "vostf/vosta",
       "seances_brutes": [
-        "JEUDI 12 NOVEMBRE À 13H30, DIMANCHE 15 NOVEMBRE À 11H* AU MEGARAMA ARRAS"
+        "JEUDI 12 NOVEMBRE À 13H30, DIMANCHE 15 NOVEMBRE À 11H* AU MEGARAMA ARRAS",
+        "*en présence du réalisateur Ivan Ostrochovsky"
       ],
       "seances": [
         {
           "debut": "2026-11-12T13:30",
-          "lieu": null,
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-15T11:00",
-          "lieu": null,
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Ivan Ostrochovsky",
           "statut": "ok"
         }
       ]
@@ -354,17 +374,20 @@
       "duree_min": 125,
       "version": "vostf/vosta",
       "seances_brutes": [
-        "VENDREDI 13 NOVEMBRE À 11H, SAMEDI 14 NOVEMBRE À 13H15* AU MEGARAMA ARRAS"
+        "VENDREDI 13 NOVEMBRE À 11H, SAMEDI 14 NOVEMBRE À 13H15* AU MEGARAMA ARRAS",
+        "*en présence du producteur Robert Kijak"
       ],
       "seances": [
         {
           "debut": "2026-11-13T11:00",
-          "lieu": null,
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T13:15",
-          "lieu": null,
+          "lieu": "Megarama Arras",
+          "presence": "du producteur Robert Kijak",
           "statut": "ok"
         }
       ]
@@ -386,17 +409,20 @@
       "duree_min": 95,
       "version": "vostf/vosta",
       "seances_brutes": [
-        "VENDREDI 13 NOVEMBRE À 18H30*, SAMEDI 14 NOVEMBRE À 9H AU MEGARAMA ARRAS"
+        "VENDREDI 13 NOVEMBRE À 18H30*, SAMEDI 14 NOVEMBRE À 9H AU MEGARAMA ARRAS",
+        "*en présence des comediennes Lucia Zemene et Manouk Pluis"
       ],
       "seances": [
         {
           "debut": "2026-11-13T18:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "des comediennes Lucia Zemene et Manouk Pluis",
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T09:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -418,17 +444,20 @@
       "duree_min": 99,
       "version": "vostf/vosta",
       "seances_brutes": [
-        "VENDREDI 13 NOVEMBRE À 21H15, SAMEDI 14 NOVEMBRE À 18H45* AU MEGARAMA ARRAS"
+        "VENDREDI 13 NOVEMBRE À 21H15, SAMEDI 14 NOVEMBRE À 18H45* AU MEGARAMA ARRAS",
+        "*en présence du producteur Victor Cunha"
       ],
       "seances": [
         {
           "debut": "2026-11-13T21:15",
-          "lieu": null,
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T18:45",
-          "lieu": null,
+          "lieu": "Megarama Arras",
+          "presence": "du producteur Victor Cunha",
           "statut": "ok"
         }
       ]
@@ -449,8 +478,29 @@
       "annee": 1976,
       "duree_min": 115,
       "version": "vostf, version restaurée",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 13H30, LUNDI 9 NOVEMBRE À 21H, MARDI 10 NOVEMBRE À 11H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-09T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-10T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "alien-la-resurrection",
@@ -468,8 +518,24 @@
       "annee": 1997,
       "duree_min": 109,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "LUNDI 9 NOVEMBRE À 21H, JEUDI 12 NOVEMBRE À 21H* AU MEGARAMA ARRAS",
+        "*en présence du réalisateur Jean-Pierre Jeunet"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-09T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T21:00",
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Jean-Pierre Jeunet",
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "changer-l-eau-des-fleurs",
@@ -487,8 +553,18 @@
       "annee": 2026,
       "duree_min": 138,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "VENDREDI 13 NOVEMBRE À 20H30 AU CASINO D'ARRAS",
+        "en présence du réalisateur Jean-Pierre Jeunet"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-13T20:30",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Jean-Pierre Jeunet",
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "delicatessen",
@@ -507,8 +583,30 @@
       "annee": 1991,
       "duree_min": 99,
       "version": "version restaurée",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 9H, JEUDI 12 NOVEMBRE À 16H*, SAMEDI 14 NOVEMBRE À 21H AU MEGARAMA ARRAS",
+        "*en présence du réalisateur Jean-Pierre Jeunet"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T16:00",
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Jean-Pierre Jeunet",
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "fargo",
@@ -527,8 +625,29 @@
       "annee": 1996,
       "duree_min": 98,
       "version": "vostf, version restaurée",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 21H, MERCREDI 11 NOVEMBRE À 9H, JEUDI 12 NOVEMBRE À 18H30 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "l-extravagant-voyage-du-jeune-et-prodigieux-t-s-spivet",
@@ -548,8 +667,18 @@
       "annee": 2013,
       "duree_min": 105,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "JEUDI 12 NOVEMBRE À 18H30 AU MEGARAMA ARRAS",
+        "en présence du réalisateur Jean-Pierre Jeunet"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-12T18:30",
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Jean-Pierre Jeunet",
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "l-homme-sans-passe",
@@ -567,8 +696,29 @@
       "annee": 2002,
       "duree_min": 97,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 9H, LUNDI 9 NOVEMBRE À 11H, MERCREDI 11 NOVEMBRE À 18H30 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-09T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "l-honneur-perdu-de-katharina-blum",
@@ -587,8 +737,29 @@
       "annee": 1975,
       "duree_min": 106,
       "version": "vostf, version restaurée",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 9H, MARDI 10 NOVEMBRE À 16H, JEUDI 12 NOVEMBRE À 21H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-10T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "la-cite-des-enfants-perdus",
@@ -606,8 +777,29 @@
       "annee": 1995,
       "duree_min": 112,
       "version": "version restaurée",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 11H, JEUDI 12 NOVEMBRE À 13H30, SAMEDI 14 NOVEMBRE À 18H30 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "la-mer-a-l-aube",
@@ -626,8 +818,29 @@
       "annee": 2011,
       "duree_min": 90,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "LUNDI 9 NOVEMBRE À 9H, JEUDI 12 NOVEMBRE À 18H30, DIMANCHE 15 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-09T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-15T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "le-bois-de-klara",
@@ -645,8 +858,23 @@
       "annee": 2026,
       "duree_min": 118,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "MERCREDI 11 NOVEMBRE À 11H15 AU MEGARAMA ARRAS, MERCREDI 11 NOVEMBRE À 18H30 AU CASINO D'ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-11T11:15",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T18:30",
+          "lieu": "Casino d'Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "le-fabuleux-destin-d-amelie-poulain",
@@ -664,8 +892,29 @@
       "annee": 2001,
       "duree_min": 122,
       "version": "version restaurée",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 13H30 AU CASINO D'ARRAS, MERCREDI 11 NOVEMBRE À 21H, DIMANCHE 15 NOVEMBRE À 11H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T13:30",
+          "lieu": "Casino d'Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-15T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "le-tambour",
@@ -684,8 +933,29 @@
       "annee": 1979,
       "duree_min": 142,
       "version": "version restaurée",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "LUNDI 9 NOVEMBRE À 21H, MERCREDI 11 NOVEMBRE À 13H30, DIMANCHE 15 NOVEMBRE 10H45 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-09T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-15T10:45",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "micmacs-a-tire-larigot",
@@ -703,8 +973,29 @@
       "annee": 2009,
       "duree_min": 105,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 21H, JEUDI 12 NOVEMBRE À 9H, SAMEDI 14 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "quand-la-mer-monte",
@@ -723,8 +1014,24 @@
       "annee": 2004,
       "duree_min": 93,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 9H AU MEGARAMA ARRAS, SAMEDI 14 NOVEMBRE À 13H30* AU CASINO D'ARRAS",
+        "*en présence des réalisateurs Yolande Moreau et Gilles Porte"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T13:30",
+          "lieu": "Casino d'Arras",
+          "presence": "des réalisateurs Yolande Moreau et Gilles Porte",
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "un-long-dimanche-de-fiancailles",
@@ -742,8 +1049,29 @@
       "annee": 2004,
       "duree_min": 133,
       "version": "version restaurée",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 21H, MERCREDI 11 NOVEMBRE À 11H, DIMANCHE 15 NOVEMBRE À 13H30 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-15T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "7h40-ce-matin-la",
@@ -768,7 +1096,8 @@
       "seances": [
         {
           "debut": "2026-11-07T14:30",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "la réalisatrice Nicole Garcia",
           "statut": "ok"
         }
       ]
@@ -796,7 +1125,8 @@
       "seances": [
         {
           "debut": "2026-11-11T21:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Emmanuel Courcol, de la scénariste Irène Muscari et de la comédienne Kali Boisson",
           "statut": "ok"
         }
       ]
@@ -824,7 +1154,8 @@
       "seances": [
         {
           "debut": "2026-11-10T18:15",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Maxime Roy, de la comédienne Ella Benoit et de Kali le chien",
           "statut": "ok"
         }
       ]
@@ -853,7 +1184,8 @@
       "seances": [
         {
           "debut": "2026-11-10T21:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "des réalisateurs Matthieu Romani et Nicolas Slomka, des comédien.nes Alex Lutz, Bernard Le Coq, Anaïde Rozam et du producteur Éric Jehelmann",
           "statut": "ok"
         }
       ]
@@ -881,7 +1213,8 @@
       "seances": [
         {
           "debut": "2026-11-07T21:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Louis-Julien Petit et de la comédienne Corinne Masiero",
           "statut": "ok"
         }
       ]
@@ -909,7 +1242,8 @@
       "seances": [
         {
           "debut": "2026-11-08T13:30",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Maxence Voiseux et du protagoniste Gabin Jourdel",
           "statut": "ok"
         }
       ]
@@ -937,7 +1271,8 @@
       "seances": [
         {
           "debut": "2026-11-09T21:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur et comédien Grégoire Ludig et du comédien Benjamin Tranié",
           "statut": "ok"
         }
       ]
@@ -965,7 +1300,8 @@
       "seances": [
         {
           "debut": "2026-11-07T18:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Alexandre Smia et du comédien Denis Ménochet",
           "statut": "ok"
         }
       ]
@@ -993,7 +1329,8 @@
       "seances": [
         {
           "debut": "2026-11-12T21:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Daniel Auteuil et du comédien Antoine Reinartz",
           "statut": "ok"
         }
       ]
@@ -1015,7 +1352,14 @@
       "duree_min": 90,
       "version": null,
       "seances_brutes": [],
-      "seances": []
+      "seances": [
+        {
+          "debut": "2026-11-10",
+          "lieu": "Casino d'Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "mariage-au-gout-d-orange",
@@ -1040,7 +1384,8 @@
       "seances": [
         {
           "debut": "2026-11-11T18:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Christopher Honoré et des comedien.nes Paul Kircher et Myriem Akheddiou",
           "statut": "ok"
         }
       ]
@@ -1068,7 +1413,8 @@
       "seances": [
         {
           "debut": "2026-11-08T19:30",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Stéphane Brizé",
           "statut": "ok"
         }
       ]
@@ -1096,7 +1442,8 @@
       "seances": [
         {
           "debut": "2026-11-12T18:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Gustave Kervern",
           "statut": "ok"
         }
       ]
@@ -1123,7 +1470,8 @@
       "seances": [
         {
           "debut": "2026-11-08T16:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1153,12 +1501,14 @@
       "seances": [
         {
           "debut": "2026-11-08T09:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-15T16:15",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1185,7 +1535,8 @@
       "seances": [
         {
           "debut": "2026-11-11T20:45",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1212,7 +1563,8 @@
       "seances": [
         {
           "debut": "2026-11-11T13:30",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1239,12 +1591,14 @@
       "seances": [
         {
           "debut": "2026-11-07T16:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-11T16:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1272,7 +1626,8 @@
       "seances": [
         {
           "debut": "2026-11-13T18:30",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "la réalisatrice Anke Blondé",
           "statut": "ok"
         }
       ]
@@ -1301,7 +1656,8 @@
       "seances": [
         {
           "debut": "2026-11-14T20:45",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Michaël R. Roskam, des comédien.nes Karim Leklou, Ruth Becquart et Laurent Capelluto, du scénariste Bernard Falaise et de la productrice Cassandre Warnauts",
           "statut": "ok"
         }
       ]
@@ -1329,7 +1685,8 @@
       "seances": [
         {
           "debut": "2026-11-11T14:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Lukas Dhont et des comédiens Emmanuel Macchia et Valentin Campagne",
           "statut": "ok"
         }
       ]
@@ -1352,17 +1709,20 @@
       "duree_min": 78,
       "version": null,
       "seances_brutes": [
-        "DIMANCHE 15 NOVEMBRE À 13H30 AU CASINO D'ARRAS*, DIMANCHE 8 NOVEMBRE À 9H AU MEGARAMA ARRAS"
+        "DIMANCHE 15 NOVEMBRE À 13H30 AU CASINO D'ARRAS*, DIMANCHE 8 NOVEMBRE À 9H AU MEGARAMA ARRAS",
+        "*en présence du réalisateur Valéry Rosier et de la comédienne Corinne Masiero"
       ],
       "seances": [
         {
-          "debut": "2026-11-15T13:30",
-          "lieu": "CASINO D'ARRAS*",
+          "debut": "2026-11-08T09:00",
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Valéry Rosier et de la comédienne Corinne Masiero",
           "statut": "ok"
         },
         {
-          "debut": "2026-11-08T09:00",
-          "lieu": "MEGARAMA ARRAS",
+          "debut": "2026-11-15T13:30",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Valéry Rosier et de la comédienne Corinne Masiero",
           "statut": "ok"
         }
       ]
@@ -1384,17 +1744,20 @@
       "duree_min": 118,
       "version": null,
       "seances_brutes": [
-        "SAMEDI 14 NOVEMBRE À 11H AU CASINO D’ARRAS*, DIMANCHE 8 NOVEMBRE À 21H AU MEGARAMA ARRAS"
+        "SAMEDI 14 NOVEMBRE À 11H AU CASINO D’ARRAS*, DIMANCHE 8 NOVEMBRE À 21H AU MEGARAMA ARRAS",
+        "*en présence du réalisateur Frank Van Passel"
       ],
       "seances": [
         {
-          "debut": "2026-11-14T11:00",
-          "lieu": "CASINO D’ARRAS*",
+          "debut": "2026-11-08T21:00",
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Frank Van Passel",
           "statut": "ok"
         },
         {
-          "debut": "2026-11-08T21:00",
-          "lieu": "MEGARAMA ARRAS",
+          "debut": "2026-11-14T11:00",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Frank Van Passel",
           "statut": "ok"
         }
       ]
@@ -1418,17 +1781,20 @@
       "duree_min": 91,
       "version": null,
       "seances_brutes": [
-        "SAMEDI 7 NOVEMBRE À 18H30*, JEUDI 12 NOVEMBRE À 9H AU MEGARAMA ARRAS"
+        "SAMEDI 7 NOVEMBRE À 18H30*, JEUDI 12 NOVEMBRE À 9H AU MEGARAMA ARRAS",
+        "*en présence des réalisateur.ices Ann Sirot et Raphaël Balboni et de la comédienne Sandrine Blancke"
       ],
       "seances": [
         {
           "debut": "2026-11-07T18:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "des réalisateur.ices Ann Sirot et Raphaël Balboni et de la comédienne Sandrine Blancke",
           "statut": "ok"
         },
         {
           "debut": "2026-11-12T09:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1453,17 +1819,20 @@
       "duree_min": 101,
       "version": "vostf",
       "seances_brutes": [
-        "MARDI 10 NOVEMBRE À 16H*, SAMEDI 14 NOVEMBRE À 9H AU CASINO D’ARRAS"
+        "MARDI 10 NOVEMBRE À 16H*, SAMEDI 14 NOVEMBRE À 9H AU CASINO D’ARRAS",
+        "*en présence de la comédienne Eliane Umuhire"
       ],
       "seances": [
         {
           "debut": "2026-11-10T16:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "la comédienne Eliane Umuhire",
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T09:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1491,17 +1860,20 @@
       "seances": [
         {
           "debut": "2026-11-08T21:15",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-11T11:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T18:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1529,12 +1901,14 @@
       "seances": [
         {
           "debut": "2026-11-08T11:00",
-          "lieu": "CASINO D’ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T21:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1557,17 +1931,20 @@
       "duree_min": 128,
       "version": "vostf",
       "seances_brutes": [
-        "SAMEDI 7 NOVEMBRE À 13H30*, JEUDI 12 NOVEMBRE À 11H AU MEGARAMA ARRAS"
+        "SAMEDI 7 NOVEMBRE À 13H30*, JEUDI 12 NOVEMBRE À 11H AU MEGARAMA ARRAS",
+        "*en présence de Dominique Olier (FIFAM)"
       ],
       "seances": [
         {
           "debut": "2026-11-07T13:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "Dominique Olier (FIFAM)",
           "statut": "ok"
         },
         {
           "debut": "2026-11-12T11:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1594,12 +1971,14 @@
       "seances": [
         {
           "debut": "2026-11-07T18:45",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T13:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1626,17 +2005,20 @@
       "seances": [
         {
           "debut": "2026-11-08T16:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-10T09:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-15T13:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1667,7 +2049,20 @@
       "seances": [
         {
           "debut": "2026-11-07T09:00",
-          "lieu": "CASINO D'ARRAS, MERCREDI 11 NOVEMBRE 18H30, JEUDI 12 NOVEMBRE 13H30 AU MEGARAMA ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1695,17 +2090,20 @@
       "seances": [
         {
           "debut": "2026-11-07T11:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-12T21:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-15T09:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1727,17 +2125,20 @@
       "duree_min": 85,
       "version": "vostf",
       "seances_brutes": [
-        "LUNDI 9 NOVEMBRE À 11H AU MEGARAMA ARRAS, VENDREDI 13 NOVEMBRE À 16H* AU CASINO D'ARRAS"
+        "LUNDI 9 NOVEMBRE À 11H AU MEGARAMA ARRAS, VENDREDI 13 NOVEMBRE À 16H* AU CASINO D'ARRAS",
+        "*en présence du réalisateur Paul Negoescu"
       ],
       "seances": [
         {
           "debut": "2026-11-09T11:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-13T16:00",
-          "lieu": null,
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Paul Negoescu",
           "statut": "ok"
         }
       ]
@@ -1765,17 +2166,20 @@
       "seances": [
         {
           "debut": "2026-11-07T13:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-11T13:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T09:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1797,17 +2201,20 @@
       "duree_min": 118,
       "version": "vostf, noir et blanc",
       "seances_brutes": [
-        "MARDI 10 NOVEMBRE À 11H AU MEGARAMA ARRAS, SAMEDI 14 NOVEMBRE À 16H* AU CASINO D'ARRAS"
+        "MARDI 10 NOVEMBRE À 11H AU MEGARAMA ARRAS, SAMEDI 14 NOVEMBRE À 16H* AU CASINO D'ARRAS",
+        "*en présence du réalisateur Levan Koguashvili"
       ],
       "seances": [
         {
           "debut": "2026-11-10T11:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T16:00",
-          "lieu": null,
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Levan Koguashvili",
           "statut": "ok"
         }
       ]
@@ -1830,17 +2237,20 @@
       "duree_min": 129,
       "version": "vostf",
       "seances_brutes": [
-        "DIMANCHE 8 NOVEMBRE À 13H30*, JEUDI 12 NOVEMBRE À 16H AU CASINO D'ARRAS"
+        "DIMANCHE 8 NOVEMBRE À 13H30*, JEUDI 12 NOVEMBRE À 16H AU CASINO D'ARRAS",
+        "*en présence de la comédienne Flonja Kodheli"
       ],
       "seances": [
         {
           "debut": "2026-11-08T13:30",
-          "lieu": "CASINO D'ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "la comédienne Flonja Kodheli",
           "statut": "ok"
         },
         {
           "debut": "2026-11-12T16:00",
-          "lieu": "CASINO D'ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1862,17 +2272,20 @@
       "duree_min": 102,
       "version": "vostf, noir et blanc",
       "seances_brutes": [
-        "LUNDI 9 NOVEMBRE À 11H AU MEGARAMA ARRAS, DIMANCHE 15 NOVEMBRE À 11H* AU CASINO D'ARRAS"
+        "LUNDI 9 NOVEMBRE À 11H AU MEGARAMA ARRAS, DIMANCHE 15 NOVEMBRE À 11H* AU CASINO D'ARRAS",
+        "*en présence du réalisateur Viesturs Kairiss"
       ],
       "seances": [
         {
           "debut": "2026-11-09T11:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-15T11:00",
-          "lieu": null,
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Viesturs Kairiss",
           "statut": "ok"
         }
       ]
@@ -1896,17 +2309,20 @@
       "duree_min": 112,
       "version": "vostf",
       "seances_brutes": [
-        "SAMEDI 7 NOVEMBRE À 21H*, JEUDI 12 NOVEMBRE À 13H30 AU MEGARAMA ARRAS"
+        "SAMEDI 7 NOVEMBRE À 21H*, JEUDI 12 NOVEMBRE À 13H30 AU MEGARAMA ARRAS",
+        "*en présence de la réalisatrice Kasia Adamik"
       ],
       "seances": [
         {
           "debut": "2026-11-07T21:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "la réalisatrice Kasia Adamik",
           "statut": "ok"
         },
         {
           "debut": "2026-11-12T13:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1928,17 +2344,20 @@
       "duree_min": 89,
       "version": "vostf",
       "seances_brutes": [
-        "LUNDI 9 NOVEMBRE À 16H*, VENDREDI 13 NOVEMBRE À 9H AU MEGARAMA ARRAS"
+        "LUNDI 9 NOVEMBRE À 16H*, VENDREDI 13 NOVEMBRE À 9H AU MEGARAMA ARRAS",
+        "*en présence du comédien Pieter Embrechts"
       ],
       "seances": [
         {
           "debut": "2026-11-09T16:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "du comédien Pieter Embrechts",
           "statut": "ok"
         },
         {
           "debut": "2026-11-13T09:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -1966,17 +2385,20 @@
       "seances": [
         {
           "debut": "2026-11-08T11:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-09T18:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-11T09:00",
-          "lieu": "CASINO D'ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -2003,12 +2425,14 @@
       "seances": [
         {
           "debut": "2026-11-09T21:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-15T09:00",
-          "lieu": "CASINO D'ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -2030,17 +2454,20 @@
       "duree_min": 99,
       "version": null,
       "seances_brutes": [
-        "MERCREDI 11 NOVEMBRE À 16H* AU CASINO D'ARRAS, VENDREDI 13 NOVEMBRE À 11H AU MEGARAMA"
+        "MERCREDI 11 NOVEMBRE À 16H* AU CASINO D'ARRAS, VENDREDI 13 NOVEMBRE À 11H AU MEGARAMA",
+        "*en présence du réalisateur Dominik Locher"
       ],
       "seances": [
         {
           "debut": "2026-11-11T16:00",
-          "lieu": "MEGARAMA",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Dominik Locher",
           "statut": "ok"
         },
         {
           "debut": "2026-11-13T11:00",
-          "lieu": "MEGARAMA",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -2067,12 +2494,14 @@
       "seances": [
         {
           "debut": "2026-11-10T16:00",
-          "lieu": "MEGARAMA",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-15T16:15",
-          "lieu": "MEGARAMA",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -2099,12 +2528,20 @@
       "seances": [
         {
           "debut": "2026-11-07T16:00",
-          "lieu": null,
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-11T11:00",
-          "lieu": null,
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-13",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -2132,7 +2569,8 @@
       "seances": [
         {
           "debut": "2026-11-10T20:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -2159,12 +2597,14 @@
       "seances": [
         {
           "debut": "2026-11-07T11:00",
-          "lieu": "CASINO D'ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-10T18:00",
-          "lieu": "MEGARAMA",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -2186,17 +2626,20 @@
       "duree_min": 112,
       "version": "vostf",
       "seances_brutes": [
-        "LUNDI 9 NOVEMBRE À 13H30 AU MEGARAMA ARRAS, JEUDI 12 NOVEMBRE À 18H15* AU CASINO D'ARRAS"
+        "LUNDI 9 NOVEMBRE À 13H30 AU MEGARAMA ARRAS, JEUDI 12 NOVEMBRE À 18H15* AU CASINO D'ARRAS",
+        "*en présence de la réalisatrice Alli Haapasalo"
       ],
       "seances": [
         {
           "debut": "2026-11-09T13:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-12T18:15",
-          "lieu": null,
+          "lieu": "Casino d'Arras",
+          "presence": "la réalisatrice Alli Haapasalo",
           "statut": "ok"
         }
       ]
@@ -2220,17 +2663,20 @@
       "duree_min": 114,
       "version": "vostf",
       "seances_brutes": [
-        "DIMANCHE 8 NOVEMBRE À 18H30*, DIMANCHE 15 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+        "DIMANCHE 8 NOVEMBRE À 18H30*, DIMANCHE 15 NOVEMBRE À 16H AU MEGARAMA ARRAS",
+        "*en présence de la réalisatrice Sophie Heldman"
       ],
       "seances": [
         {
           "debut": "2026-11-08T18:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "la réalisatrice Sophie Heldman",
           "statut": "ok"
         },
         {
           "debut": "2026-11-15T16:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -2257,17 +2703,20 @@
       "seances": [
         {
           "debut": "2026-11-07T09:00",
-          "lieu": "MEGARAMA ARRAS",
-          "statut": "ok"
-        },
-        {
-          "debut": "2026-11-13T21:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         },
         {
           "debut": "2026-11-10T11:15",
-          "lieu": "CASINO D'ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-13T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -2290,17 +2739,20 @@
       "duree_min": 82,
       "version": null,
       "seances_brutes": [
-        "LUNDI 9 NOVEMBRE À 18H30*, SAMEDI 14 NOVEMBRE À 11H AU MEGARAMA ARRAS"
+        "LUNDI 9 NOVEMBRE À 18H30*, SAMEDI 14 NOVEMBRE À 11H AU MEGARAMA ARRAS",
+        "*en présence des réalisateurs Dimitri Planchon & Jean-Paul Guigue"
       ],
       "seances": [
         {
           "debut": "2026-11-09T18:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "des réalisateurs Dimitri Planchon & Jean-Paul Guigue",
           "statut": "ok"
         },
         {
           "debut": "2026-11-14T11:00",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": null,
           "statut": "ok"
         }
       ]
@@ -2328,7 +2780,8 @@
       "seances": [
         {
           "debut": "2026-11-09T18:00",
-          "lieu": "CASINO D'ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Aurélien Peilloux et des comédien.nes Galatéa Bellugi et Stefan Crépon",
           "statut": "ok"
         }
       ]
@@ -2356,7 +2809,8 @@
       "seances": [
         {
           "debut": "2026-11-08T16:30",
-          "lieu": "CASINO D'ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "la réalisatrice Marie Rosselet-Ruiz et de la comédienne Céleste Brunnquell",
           "statut": "ok"
         }
       ]
@@ -2384,7 +2838,8 @@
       "seances": [
         {
           "debut": "2026-11-13T18:30",
-          "lieu": "MEGARAMA ARRAS",
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Gonzague Legout et de la comédienne Naïla Harzoune",
           "statut": "ok"
         }
       ]
@@ -2412,7 +2867,8 @@
       "seances": [
         {
           "debut": "2026-11-14T18:00",
-          "lieu": "CASINO D'ARRAS",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Antoine Giorgini et du comédien Edouard Sulpice",
           "statut": "a_verifier"
         }
       ]
@@ -2433,8 +2889,29 @@
       "annee": 1970,
       "duree_min": 115,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 11H, MARDI 10 NOVEMBRE À 21H, VENDREDI 13 NOVEMBRE À 11H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-10T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-13T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "l-emmuree-vivante",
@@ -2452,8 +2929,29 @@
       "annee": 1977,
       "duree_min": 95,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 18H30, MERCREDI 11 NOVEMBRE À 9H, VENDREDI 13 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-13T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "l-oiseau-au-plumage-de-cristal",
@@ -2471,8 +2969,29 @@
       "annee": 1970,
       "duree_min": 96,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 21H, LUNDI 9 NOVEMBRE À 11H, MARDI 10 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-09T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-10T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "la-fille-qui-en-savait-trop",
@@ -2490,8 +3009,29 @@
       "annee": 1963,
       "duree_min": 88,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 9H, MARDI 10 NOVEMBRE À 13H30, SAMEDI 14 NOVEMBRE À 21H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-10T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "la-tarentule-au-ventre-noir",
@@ -2509,8 +3049,29 @@
       "annee": 1971,
       "duree_min": 89,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 21H, MARDI 10 NOVEMBRE À 18H30, VENDREDI 13 NOVEMBRE À 21H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-10T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-13T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "meurtre-a-l-italienne",
@@ -2528,8 +3089,29 @@
       "annee": 1959,
       "duree_min": 114,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 11H, LUNDI 9 NOVEMBRE À 16H, SAMEDI 14 NOVEMBRE À 18H30 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-09T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "qui-a-tue-le-chat",
@@ -2547,8 +3129,23 @@
       "annee": 1977,
       "duree_min": 109,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 18H30, MERCREDI 11 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "qui-sera-tue-demain",
@@ -2566,8 +3163,29 @@
       "annee": 1977,
       "duree_min": 94,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 16H, MERCREDI 11 NOVEMBRE À 21H, SAMEDI 14 NOVEMBRE À 9H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "adalen-31",
@@ -2585,8 +3203,29 @@
       "annee": 1969,
       "duree_min": 110,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 16H, MARDI 10 NOVEMBRE À 18H30, SAMEDI 14 NOVEMBRE À 9H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-10T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T09:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "daens",
@@ -2604,8 +3243,23 @@
       "annee": 1992,
       "duree_min": 138,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 16H, SAMEDI 14 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "germinal",
@@ -2623,8 +3277,23 @@
       "annee": 1963,
       "duree_min": 110,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "LUNDI 9 NOVEMBRE À 16H*, DIMANCHE 15 NOVEMBRE À 13H30 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-09T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-15T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "la-terre-de-la-grande-promesse",
@@ -2642,8 +3311,23 @@
       "annee": 1975,
       "duree_min": 179,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "MARDI 10 NOVEMBRE À 16H, VENDREDI 13 NOVEMBRE À 18H30 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-10T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-13T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "le-jeune-karl-marx",
@@ -2661,8 +3345,29 @@
       "annee": 2017,
       "duree_min": 118,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 18H30, MARDI 10 NOVEMBRE À 21H, SAMEDI 14 NOVEMBRE À 11H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-10T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "les-camarades",
@@ -2680,8 +3385,29 @@
       "annee": 1963,
       "duree_min": 130,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "LUNDI 9 NOVEMBRE À 18H30, JEUDI 12 NOVEMBRE À 11H, DIMANCHE 15 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-09T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-15T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "les-miserables",
@@ -2699,8 +3425,24 @@
       "annee": 1972,
       "duree_min": 235,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "PREMIÈRE PARTIE : MERCREDI 11 NOVEMBRE À 13H45 AU MEGARAMA ARRAS,",
+        "DEUXIÈME PARTIE : MERCREDI 11 NOVEMBRE À 16H15 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-11T13:45",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T16:15",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "matewan",
@@ -2718,8 +3460,29 @@
       "annee": 1987,
       "duree_min": 135,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 13H30, MERCREDI 11 NOVEMBRE À 18H30, VENDREDI 13 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-13T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "traitre-sur-commande",
@@ -2737,8 +3500,29 @@
       "annee": 1970,
       "duree_min": 124,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 11H, JEUDI 12 NOVEMBRE À 21H, SAMEDI 14 NOVEMBRE À 11H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T21:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "a-la-poursuite-de-l-affreunard",
@@ -2757,8 +3541,17 @@
       "annee": 2026,
       "duree_min": 44,
       "version": "animation",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "MERCREDI 11 NOVEMBRE À 9H30 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-11T09:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "carmen-l-oiseau-rebelle",
@@ -2776,8 +3569,18 @@
       "annee": 2026,
       "duree_min": 93,
       "version": "animation",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 15 NOVEMBRE À 13H45 AU CASINO D'ARRAS",
+        "en présence du réalisateur Sébastien Laudenbach"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-15T13:45",
+          "lieu": "Casino d'Arras",
+          "presence": "du réalisateur Sébastien Laudenbach",
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "en-promenade",
@@ -2791,8 +3594,17 @@
       "annee": null,
       "duree_min": 36,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 11H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "la-chenille-qui-fait-des-trous",
@@ -2810,8 +3622,17 @@
       "annee": 2025,
       "duree_min": 35,
       "version": "animation",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 15 NOVEMBRE À 9H30 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-15T09:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "leo-le-chant-des-oceans",
@@ -2829,8 +3650,17 @@
       "annee": 2025,
       "duree_min": 91,
       "version": "animation",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 7 NOVEMBRE À 16H AU CASINO D'ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-07T16:00",
+          "lieu": "Casino d'Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "ma-premiere-seance",
@@ -2842,10 +3672,19 @@
       "realisation": [],
       "pays": [],
       "annee": null,
-      "duree_min": null,
+      "duree_min": 45,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 9H30 AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T09:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "muyi-la-legende-du-village-des-femmes",
@@ -2863,8 +3702,18 @@
       "annee": 2026,
       "duree_min": 90,
       "version": "animation",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 16H AU MEGARAMA ARRAS",
+        "en présence du réalisateur Julien Chheng"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T16:00",
+          "lieu": "Megarama Arras",
+          "presence": "du réalisateur Julien Chheng",
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "new-york-miriam-et-moi",
@@ -2884,8 +3733,18 @@
       "annee": 2026,
       "duree_min": 82,
       "version": "animation",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "MERCREDI 11 NOVEMBRE À 16H AU MEGARAMA ARRAS",
+        "en présence de la réalisatrice Léahn Vivier-Chapas"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-11T16:00",
+          "lieu": "Megarama Arras",
+          "presence": "la réalisatrice Léahn Vivier-Chapas",
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "papaya",
@@ -2903,8 +3762,17 @@
       "annee": 2025,
       "duree_min": 74,
       "version": "animation",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "SAMEDI 14 NOVEMBRE À 14H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-14T14:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "1984",
@@ -2922,8 +3790,79 @@
       "annee": 1984,
       "duree_min": 113,
       "version": "vostf",
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "LUNDI 9 NOVEMBRE À 13H30, MERCREDI 11 NOVEMBRE À 18H30, JEUDI 12 NOVEMBRE À 11H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-09T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T18:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
+    },
+    {
+      "id": "conversation-avec-volker-schlondorff",
+      "titre": "Conversation avec Volker Schlöndorff",
+      "section": "seances-speciales-rencontres",
+      "type": "rencontre",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/seances-speciales/conversation-avec-volker-schlondorff.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-113.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances_brutes": [
+        "Mercredi 11 novembre 2026"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-11T10:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok",
+          "duree_min": 60
+        }
+      ]
+    },
+    {
+      "id": "conversation-avec-yolande-moreau",
+      "titre": "Conversation avec Yolande Moreau",
+      "section": "seances-speciales-rencontres",
+      "type": "rencontre",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/seances-speciales/conversation-avec-yolande-moreau.html",
+      "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-114.png?v=1",
+      "realisation": [],
+      "pays": [],
+      "annee": null,
+      "duree_min": null,
+      "version": null,
+      "seances_brutes": [
+        "Dimanche 8 novembre 2026"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T11:00",
+          "lieu": "Casino d'Arras",
+          "presence": null,
+          "statut": "ok",
+          "duree_min": 60
+        }
+      ]
     },
     {
       "id": "l-affaire-klarsfeld",
@@ -2943,8 +3882,24 @@
       "annee": 2026,
       "duree_min": 85,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "DIMANCHE 8 NOVEMBRE À 13H30 ET SAMEDI 14 NOVEMBRE À 16H* AU MEGARAMA ARRAS",
+        "*en présence de la réalisatrice Emilie Phuong"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-08T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-14T16:00",
+          "lieu": "Megarama Arras",
+          "presence": "la réalisatrice Emilie Phuong",
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "la-faille",
@@ -2964,15 +3919,36 @@
       "annee": 1975,
       "duree_min": 110,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "MARDI 10 NOVEMBRE À 13H30, MERCREDI 11 NOVEMBRE À 11H, JEUDI 12 NOVEMBRE À 16H AU MEGARAMA ARRAS"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-10T13:30",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-11T11:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        },
+        {
+          "debut": "2026-11-12T16:00",
+          "lieu": "Megarama Arras",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "lecon-de-cinema-de-jean-pierre-jeunet",
       "titre": "Leçon de cinéma de Jean-Pierre Jeunet",
       "section": "seances-speciales-rencontres",
       "type": "rencontre",
-      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/rencontres/lecon-de-cinema-de-jean-pierre-jeunet.html",
+      "lien_officiel": "https://www.arrasfilmfestival.com/blog/films-de-l-edition-2026/seances-speciales/lecon-de-cinema-de-jean-pierre-jeunet.html",
       "affiche": "https://www.arrasfilmfestival.com/medias/images/affiche-111.png?v=1",
       "realisation": [],
       "pays": [],
@@ -2982,7 +3958,15 @@
       "seances_brutes": [
         "Vendredi 13 novembre 2026"
       ],
-      "seances": []
+      "seances": [
+        {
+          "debut": "2026-11-13T14:30",
+          "lieu": "Université d'Artois - Amphithéâtre Churchill",
+          "presence": null,
+          "statut": "ok",
+          "duree_min": 120
+        }
+      ]
     },
     {
       "id": "cine-concert-faut-pas-s-en-faire",
@@ -3001,8 +3985,17 @@
       "annee": 1923,
       "duree_min": 60,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "MARDI 10 NOVEMBRE À 19H À LA CHAPELLE DU PÔLE CULTUREL SAINT-PIERRE"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-10T19:00",
+          "lieu": "Chapelle du Pôle culturel Saint-Pierre",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "cine-concert-la-greve",
@@ -3020,8 +4013,17 @@
       "annee": 1925,
       "duree_min": 85,
       "version": null,
-      "seances_brutes": [],
-      "seances": []
+      "seances_brutes": [
+        "MERCREDI 11 NOVEMBRE À 19H À LA CHAPELLE DU PÔLE CULTUREL SAINT-PIERRE"
+      ],
+      "seances": [
+        {
+          "debut": "2026-11-11T19:00",
+          "lieu": "Chapelle du Pôle culturel Saint-Pierre",
+          "presence": null,
+          "statut": "ok"
+        }
+      ]
     },
     {
       "id": "blind-test",
@@ -3038,7 +4040,15 @@
       "seances_brutes": [
         "Lundi 9 novembre 2026"
       ],
-      "seances": []
+      "seances": [
+        {
+          "debut": "2026-11-09T23:00",
+          "lieu": "Village du festival",
+          "presence": null,
+          "statut": "ok",
+          "duree_min": 120
+        }
+      ]
     },
     {
       "id": "fluo-sauvage",
@@ -3055,7 +4065,15 @@
       "seances_brutes": [
         "Vendredi 13 novembre 2026"
       ],
-      "seances": []
+      "seances": [
+        {
+          "debut": "2026-11-13T23:00",
+          "lieu": "Village du festival",
+          "presence": null,
+          "statut": "ok",
+          "duree_min": 120
+        }
+      ]
     },
     {
       "id": "francis",
@@ -3072,7 +4090,15 @@
       "seances_brutes": [
         "Samedi 14 novembre 2026"
       ],
-      "seances": []
+      "seances": [
+        {
+          "debut": "2026-11-14T23:00",
+          "lieu": "Village du festival",
+          "presence": null,
+          "statut": "ok",
+          "duree_min": 120
+        }
+      ]
     },
     {
       "id": "meryha",
@@ -3089,7 +4115,15 @@
       "seances_brutes": [
         "Mercredi 11 novembre 2026"
       ],
-      "seances": []
+      "seances": [
+        {
+          "debut": "2026-11-11T23:00",
+          "lieu": "Village du festival",
+          "presence": null,
+          "statut": "ok",
+          "duree_min": 120
+        }
+      ]
     },
     {
       "id": "radiomono",
@@ -3106,7 +4140,15 @@
       "seances_brutes": [
         "Samedi 7 novembre 2026"
       ],
-      "seances": []
+      "seances": [
+        {
+          "debut": "2026-11-07T23:00",
+          "lieu": "Village du festival",
+          "presence": null,
+          "statut": "ok",
+          "duree_min": 120
+        }
+      ]
     },
     {
       "id": "the-water-pistols",
@@ -3123,7 +4165,15 @@
       "seances_brutes": [
         "Jeudi 12 novembre 2026"
       ],
-      "seances": []
+      "seances": [
+        {
+          "debut": "2026-11-12T23:00",
+          "lieu": "Village du festival",
+          "presence": null,
+          "statut": "ok",
+          "duree_min": 120
+        }
+      ]
     },
     {
       "id": "two-of-us",
@@ -3140,7 +4190,15 @@
       "seances_brutes": [
         "Mardi 10 novembre 2026"
       ],
-      "seances": []
+      "seances": [
+        {
+          "debut": "2026-11-10T23:00",
+          "lieu": "Village du festival",
+          "presence": null,
+          "statut": "ok",
+          "duree_min": 120
+        }
+      ]
     }
   ]
 }
