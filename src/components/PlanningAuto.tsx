@@ -36,7 +36,7 @@ export default function PlanningAuto({ films, seancesParEvenement, selection, di
 
             {films.length === 0 ? (
                 <p className="text-secondaire mt-2">
-                    Aucun film pour le moment. Dans « Par thème », touchez « ☆ À voir » sur les films qui vous
+                    Aucun film pour le moment. Dans « Par thème », cliquez sur « À voir » sur les films qui vous
                     intéressent, puis revenez ici : le site vous propose un planning.
                 </p>
             ) : (

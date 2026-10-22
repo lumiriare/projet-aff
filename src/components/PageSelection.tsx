@@ -146,7 +146,9 @@ export default function PageSelection({ selection, onRetirer, onVider, onRetour,
 
             <p className="text-secondaire mt-10 text-[0.9rem] print:mt-6">
                 Les horaires sont à vérifier auprès du festival. Réservation et billetterie :
-                arrasfilmfestival.com.
+                <a href="https://www.arrasfilmfestival.com" target="_blank" rel="noopener noreferrer" className="text-encre underline">
+                    arrasfilmfestival.com
+                </a>
             </p>
         </main>
     )
