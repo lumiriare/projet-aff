@@ -10,15 +10,17 @@ interface Props {
     seancesParEvenement: Map<string, SeanceFestival[]>
     selection: SeanceFestival[]
     onBasculer: (seance: SeanceFestival) => void
+    aVoir: string[] // identifiants des films à voir
+    onBasculerAVoir: (id: string) => void
 }
 
-// "sam 14 - 13h15" (ou seulement le jour quand l'heure n'est pas publiée)
+// « sam 14 · 13h15 » (ou seulement le jour quand l'heure n'est pas publiée)
 function libelleSeance(s: SeanceFestival): string {
     const jour = `${jourCourt(s.jour)} ${numeroJour(s.jour)}`
-    return s.debutMin === null ? jour : `${jour} - ${formaterHeure(s.debutMin)}`
+    return s.debutMin === null ? jour : `${jour} · ${formaterHeure(s.debutMin)}`
 }
 
-export default function ParTheme({ sections, evenements, seancesParEvenement, selection, onBasculer }: Props) {
+export default function ParTheme({ sections, evenements, seancesParEvenement, selection, onBasculer, aVoir, onBasculerAVoir }: Props) {
     const [recherche, setRecherche] = useState('')
     const idsChoisis = new Set(selection.map((s) => s.id))
     const termes = normaliser(recherche.trim())
@@ -41,6 +43,7 @@ export default function ParTheme({ sections, evenements, seancesParEvenement, se
 
     return (
         <div className="min-w-0">
+            <h2 className="sr-only">Films par thème</h2>
             <div className="px-4 py-4">
                 <label htmlFor="recherche-theme" className="block font-bold">
                     Rechercher
@@ -53,6 +56,9 @@ export default function ParTheme({ sections, evenements, seancesParEvenement, se
                     placeholder="Titre, réalisateur, pays…"
                     className="mt-1 min-h-11 w-full border-2 border-encre bg-papier px-3"
                 />
+                <p className="mt-2 font-bold">
+                    Touchez « À voir » sur les films qui vous intéressent : le site peut vous proposer un planning.
+                </p>
                 <p className="text-secondaire mt-2" aria-live="polite">
                     {nbFilms} film{nbFilms > 1 ? 's' : ''} dans {themes.length} thème{themes.length > 1 ? 's' : ''}
                 </p>
@@ -63,7 +69,7 @@ export default function ParTheme({ sections, evenements, seancesParEvenement, se
                 <details key={`${section.id}${termes ? '-recherche' : ''}`} open={termes !== ''} className="border-t-2 border-encre">
                     <summary className="flex min-h-12 cursor-pointer items-center justify-between gap-3 px-4 py-2 text-lg font-bold">
                         <span>{section.nom}</span>
-                        <span className="text-secondaire text-[0.85rem] font-normal">
+                        <span className="text-secondaire text-[0.9rem] font-normal">
                             {films.length} film{films.length > 1 ? 's' : ''}
                         </span>
                     </summary>
@@ -73,21 +79,38 @@ export default function ParTheme({ sections, evenements, seancesParEvenement, se
                             const seances = seancesParEvenement.get(e.id) ?? []
                             return (
                                 <li key={e.id} className="border-t border-filet px-4 py-3">
-                                    <h3 className="text-lg font-bold leading-snug">
-                                        <a
-                                            href={e.lien_officiel}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="underline decoration-transparent underline-offset-4 hover:decoration-current"
+                                    <div className="flex items-start justify-between gap-3">
+                                        <div className="min-w-0">
+                                        <h3 className="text-lg font-bold leading-snug">
+                                            <a
+                                                href={e.lien_officiel}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="underline decoration-transparent underline-offset-4 hover:decoration-current"
+                                            >
+                                                {e.titre}
+                                                <span className="sr-only"> (page officielle, nouvel onglet)</span>
+                                            </a>
+                                        </h3>
+                                        <p className="text-secondaire text-[0.9rem] leading-snug">
+                                            {[e.realisation.join(', '), e.duree_min ? formaterHeure(e.duree_min) : null, e.type === 'after' ? 'Entrée gratuite' : null]
+                                                .filter(Boolean)
+                                                .join(' · ')}
+                                        </p>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            aria-label={
+                                                aVoir.includes(e.id)
+                                                    ? `Retirer ${e.titre} de mes films à voir`
+                                                    : `Ajouter ${e.titre} à mes films à voir`
+                                            }
+                                            onClick={() => onBasculerAVoir(e.id)}
+                                            className={`min-h-11 shrink-0 border-2 border-encre px-2 font-bold whitespace-nowrap ${aVoir.includes(e.id) ? 'bg-encre text-papier' : 'bg-papier'}`}
                                         >
-                                            {e.titre}
-                                        </a>
-                                    </h3>
-                                    <p className="text-secondaire text-[0.85rem] leading-snug">
-                                        {[e.realisation.join(', '), e.duree_min ? formaterHeure(e.duree_min) : null, e.type === 'after' ? 'Entrée gratuite' : null]
-                                            .filter(Boolean)
-                                            .join(' · ')}
-                                    </p>
+                                            {aVoir.includes(e.id) ? '★ À voir' : '☆ À voir'}
+                                        </button>
+                                    </div>
 
                                     {seances.length === 0 ? (
                                         <p className="text-secondaire mt-2">Horaires à venir</p>
@@ -102,7 +125,6 @@ export default function ParTheme({ sections, evenements, seancesParEvenement, se
                                                         <button
                                                             type="button"
                                                             disabled={chevauche}
-                                                            aria-pressed={ajoutee}
                                                             aria-label={
                                                                 ajoutee
                                                                     ? `Retirer ${e.titre}, ${libelleSeance(s)}, de ma sélection`
@@ -118,7 +140,7 @@ export default function ParTheme({ sections, evenements, seancesParEvenement, se
                                                             <span>
                                                                 {libelleSeance(s)}
                                                                 <br />
-                                                                <span className="text-[0.85rem] font-normal">
+                                                                <span className="text-[0.9rem] font-normal">
                                                                     {chevauche ? 'Chevauche' : (s.seance.lieu ?? 'Lieu à confirmer')}
                                                                 </span>
                                                             </span>

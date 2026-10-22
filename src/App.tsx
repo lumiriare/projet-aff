@@ -5,8 +5,10 @@ import GrilleDispo from './components/GrilleDispo'
 import ListeJour from './components/ListeJour'
 import PageSelection from './components/PageSelection'
 import PanneauSelection from './components/PanneauSelection'
+import PlanningAuto from './components/PlanningAuto'
 import ParTheme from './components/ParTheme'
 import { JOURS_FESTIVAL, jourCourt, jourLong, normaliser, numeroJour } from './format'
+import { useAVoir } from './hooks/useAVoir'
 import { useDispo } from './hooks/useDispo'
 import { useSelection } from './hooks/useSelection'
 import { aDesDispo, estLibre } from './moteur/dispo'
@@ -36,6 +38,10 @@ export default function App() {
     const { ids, ajouter, retirer, vider } = useSelection()
     const { dispos, basculer: basculerDispo, effacer: effacerDispos } = useDispo()
     const dispoActives = aDesDispo(dispos)
+    const { ids: aVoirIds, basculer: basculerAVoir } = useAVoir()
+    const filmsAVoir = aVoirIds
+        .map((id) => programme.evenements.find((e) => e.id === id))
+        .filter((e): e is Evenement => e !== undefined)
 
     const selection = useMemo(
         () =>
@@ -45,6 +51,17 @@ export default function App() {
                 .sort((a, b) => a.jour.localeCompare(b.jour) || (a.debutMin ?? -1) - (b.debutMin ?? -1)),
         [ids],
     )
+
+    // Films à voir qui n'ont pas encore de séance choisie, et nombre de films dans « Mon planning »
+    const filmsAPlacer = filmsAVoir.filter((f) => !selection.some((s) => s.evenement.id === f.id))
+    const nbFilms = new Set([...filmsAPlacer.map((f) => f.id), ...selection.map((s) => s.evenement.id)]).size
+    const [proposerAuto, setProposerAuto] = useState(false)
+
+    // Ouvre « Mon planning » ; avec proposer = true, les propositions sont calculées tout de suite
+    function voirPlanning(proposer = false) {
+        setProposerAuto(proposer)
+        setVue('selection')
+    }
 
     // Un film correspond aux filtres de thème et de recherche ?
     const correspond = useMemo(() => {
@@ -79,17 +96,20 @@ export default function App() {
 
     return (
         <div className="min-h-screen pb-24 lg:pb-0">
-            <header className="border-b-2 border-encre print:hidden">
+            <header className="border-b-2 border-encre bg-festival print:hidden">
                 <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3">
-                    <p className="text-xl font-bold">AFF - Programme Interactif</p>
+                    <h1 className="text-xl font-bold">
+                        AFF - Programme Interactif
+                        <span className="sr-only"> : programme du festival du film d'Arras, projet non officiel</span>
+                    </h1>
                     {/* Sur téléphone, la barre du bas mène déjà à la sélection : on ne la répète pas ici */}
                     <button
                         type="button"
                         aria-current={vue === 'selection' ? 'page' : undefined}
-                        onClick={() => setVue('selection')}
+                        onClick={() => voirPlanning()}
                         className={`hidden min-h-11 border-2 border-encre px-3 font-bold lg:block ${vue === 'selection' ? 'bg-encre text-papier' : ''}`}
                     >
-                        Ma sélection · {selection.length}
+                        Mon planning · {nbFilms}
                     </button>
                 </div>
 
@@ -121,6 +141,17 @@ export default function App() {
                     onRetirer={retirer}
                     onVider={vider}
                     onRetour={() => setVue('programme')}
+                    bloc={
+                        <PlanningAuto
+                            films={filmsAVoir}
+                            seancesParEvenement={SEANCES_PAR_EVENEMENT}
+                            selection={selection}
+                            dispos={dispos}
+                            onRetirerFilm={basculerAVoir}
+                            onAjouterSeances={(ids) => ids.forEach(ajouter)}
+                            proposerAuto={proposerAuto}
+                        />
+                    }
                 />
             ) : vue === 'theme' ? (
                 <main className="mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,1fr)_19rem]">
@@ -130,20 +161,24 @@ export default function App() {
                         seancesParEvenement={SEANCES_PAR_EVENEMENT}
                         selection={selection}
                         onBasculer={basculer}
+                        aVoir={aVoirIds}
+                        onBasculerAVoir={basculerAVoir}
                     />
-                    <aside className="hidden border-l-2 border-encre p-4 lg:block">
+                    <aside aria-label="Mon planning" className="hidden border-l-2 border-encre p-4 lg:block">
                         <div className="sticky top-4">
                             <PanneauSelection
                                 selection={selection}
+                                filmsAPlacer={filmsAPlacer}
                                 onRetirer={retirer}
-                                onVoirPlanning={() => setVue('selection')}
+                                onRetirerFilm={basculerAVoir}
+                                onVoirPlanning={voirPlanning}
                             />
                         </div>
                     </aside>
                 </main>
             ) : (
                 <main className="mx-auto grid max-w-7xl lg:grid-cols-[16rem_minmax(0,1fr)_19rem]">
-                    <aside className="hidden border-r-2 border-encre p-4 lg:block">
+                    <aside aria-label="Filtres" className="hidden border-r-2 border-encre p-4 lg:block">
                         <PanneauFiltres
                             filtres={filtres}
                             sections={programme.sections}
@@ -205,7 +240,7 @@ export default function App() {
                         </div>
 
                         <div className="px-4 pt-4 pb-2">
-                            <h2 className="text-2xl font-bold">{jourLong(jour)}</h2>
+                            <h2 className="text-accent text-2xl font-bold">{jourLong(jour)}</h2>
                             <p className="text-secondaire" aria-live="polite">
                                 {seancesDuJour.length} séance{seancesDuJour.length > 1 ? 's' : ''}
                             </p>
@@ -239,6 +274,7 @@ export default function App() {
                                                 className="underline underline-offset-4"
                                             >
                                                 {e.titre}
+                                                <span className="sr-only"> (page officielle, nouvel onglet)</span>
                                             </a>
                                             <span className="text-secondaire"> · {NOM_SECTION.get(e.section)}</span>
                                         </li>
@@ -248,12 +284,14 @@ export default function App() {
                         )}
                     </div>
 
-                    <aside className="hidden border-l-2 border-encre p-4 lg:block">
+                    <aside aria-label="Mon planning" className="hidden border-l-2 border-encre p-4 lg:block">
                         <div className="sticky top-4">
                             <PanneauSelection
                                 selection={selection}
+                                filmsAPlacer={filmsAPlacer}
                                 onRetirer={retirer}
-                                onVoirPlanning={() => setVue('selection')}
+                                onRetirerFilm={basculerAVoir}
+                                onVoirPlanning={voirPlanning}
                             />
                         </div>
                     </aside>
@@ -261,24 +299,46 @@ export default function App() {
             )}
 
             {vue !== 'selection' && (
-                <div className="fixed inset-x-0 bottom-0 flex items-center justify-between gap-3 border-t-2 border-encre bg-papier px-4 py-3 lg:hidden">
+                <aside
+                    aria-label="Résumé de mon planning"
+                    className="fixed inset-x-0 bottom-0 flex items-center justify-between gap-3 border-t-2 border-encre bg-papier px-4 py-3 lg:hidden"
+                >
                     <span>
-                        <strong>{selection.length}</strong> séance{selection.length > 1 ? 's' : ''} choisie
-                        {selection.length > 1 ? 's' : ''}
+                        {nbFilms === 0 ? (
+                            'Aucun film choisi'
+                        ) : (
+                            <>
+                                {filmsAPlacer.length > 0 && (
+                                    <>
+                                        <strong>{filmsAPlacer.length}</strong> film{filmsAPlacer.length > 1 ? 's' : ''} à voir
+                                    </>
+                                )}
+                                {filmsAPlacer.length > 0 && selection.length > 0 && ' · '}
+                                {selection.length > 0 && (
+                                    <>
+                                        <strong>{selection.length}</strong> séance{selection.length > 1 ? 's' : ''}
+                                    </>
+                                )}
+                            </>
+                        )}
                     </span>
                     <button
                         type="button"
-                        onClick={() => setVue('selection')}
-                        className="min-h-11 border-2 border-encre bg-encre px-3 font-bold text-papier"
+                        onClick={() => voirPlanning(filmsAPlacer.length > 0)}
+                        disabled={nbFilms === 0}
+                        className="min-h-11 border-2 border-encre bg-encre px-3 font-bold text-papier disabled:border-dashed disabled:bg-papier disabled:text-secondaire"
                     >
-                        Voir mon planning ›
+                        {filmsAPlacer.length > 0 ? 'Proposer un planning ›' : 'Voir mon planning ›'}
                     </button>
-                </div>
+                </aside>
             )}
 
-            <footer className="text-secondaire border-t-2 border-encre px-4 py-4 text-[0.85rem] print:hidden">
+            <footer className="text-secondaire border-t-2 border-encre px-4 py-4 text-[0.9rem] print:hidden">
                 Ce programme interactif est un projet bénévole indépendant et non officiel. Les informations du programme
                 sont à vérifier auprès du festival.
+                <br></br>
+                Développé par <a href="https://github.com/lumiriare" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">lumiriare</a>.
+                Ce projet est open source est disponible sur <a href="https://github.com/lumiriare/projet-aff" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">GitHub</a>
             </footer>
         </div>
     )

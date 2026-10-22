@@ -20,7 +20,7 @@ export default function GrilleDispo({ dispos, nbSeancesPossibles, onBasculer, on
                 <span>Je suis libre</span>
                 <span className="flex items-center gap-2">
                     {nbCreneaux > 0 && (
-                        <span className="border-2 border-encre px-2 text-[0.85rem]">
+                        <span className="border-2 border-encre px-2 text-[0.9rem]">
                             {nbCreneaux} créneau{nbCreneaux > 1 ? 'x' : ''}
                         </span>
                     )}
@@ -33,7 +33,7 @@ export default function GrilleDispo({ dispos, nbSeancesPossibles, onBasculer, on
                 </span>
             </summary>
 
-            <p className="text-secondaire text-[0.85rem] leading-snug">
+            <p className="text-secondaire text-[0.9rem] leading-snug">
                 Touchez autant de cases que vous voulez : plusieurs jours, plusieurs moments.
             </p>
 
@@ -42,7 +42,7 @@ export default function GrilleDispo({ dispos, nbSeancesPossibles, onBasculer, on
                     <tr>
                         <td />
                         {MOMENTS.map((m) => (
-                            <th key={m.id} scope="col" className="text-[0.75rem] leading-tight font-bold">
+                            <th key={m.id} scope="col" className="text-[0.85rem] leading-tight font-bold">
                                 {m.nom}
                                 <br />
                                 <span className="font-normal">{m.precision}</span>
@@ -53,7 +53,7 @@ export default function GrilleDispo({ dispos, nbSeancesPossibles, onBasculer, on
                 <tbody>
                     {JOURS_FESTIVAL.map((jour) => (
                         <tr key={jour}>
-                            <th scope="row" className="pr-1 text-left text-[0.85rem] font-bold whitespace-nowrap">
+                            <th scope="row" className="pr-1 text-left text-[0.9rem] font-bold whitespace-nowrap">
                                 {jourCourt(jour)} {numeroJour(jour)}
                             </th>
                             {MOMENTS.map((m) => {

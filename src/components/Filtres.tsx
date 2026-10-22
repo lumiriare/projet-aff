@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useId, type ReactNode } from 'react'
 import type { Section } from '../types'
 
 export interface Filtres {
@@ -27,7 +27,7 @@ function Groupe({ titre, nombre, children }: { titre: string; nombre: number; ch
             <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 font-bold [&::-webkit-details-marker]:hidden">
                 <span>{titre}</span>
                 <span className="flex items-center gap-2">
-                    {nombre > 0 && <span className="border-2 border-encre px-2 text-[0.85rem]">{nombre}</span>}
+                    {nombre > 0 && <span className="border-2 border-encre px-2 text-[0.9rem]">{nombre}</span>}
                     <span aria-hidden="true" className="group-open:hidden">
                         +
                     </span>
@@ -43,15 +43,16 @@ function Groupe({ titre, nombre, children }: { titre: string; nombre: number; ch
 
 export default function PanneauFiltres({ filtres, sections, lieux, onChange }: Props) {
     const actif = filtres.sections.length > 0 || filtres.lieux.length > 0 || filtres.recherche !== ''
+    const idRecherche = useId() // le panneau existe deux fois dans la page (ordinateur et téléphone) : un identifiant par exemplaire
 
     return (
         <div className="space-y-4">
             <div>
-                <label htmlFor="recherche" className="block font-bold">
+                <label htmlFor={idRecherche} className="block font-bold">
                     Rechercher
                 </label>
                 <input
-                    id="recherche"
+                    id={idRecherche}
                     type="search"
                     value={filtres.recherche}
                     onChange={(e) => onChange({ ...filtres, recherche: e.target.value })}

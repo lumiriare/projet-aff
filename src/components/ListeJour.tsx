@@ -63,9 +63,10 @@ export default function ListeJour({ seances, selection, nomSection, onBasculer }
                                                 className="underline decoration-transparent underline-offset-4 hover:decoration-current"
                                             >
                                                 {e.titre}
+                                                <span className="sr-only"> (page officielle, nouvel onglet)</span>
                                             </a>
                                         </h4>
-                                        <p className="text-secondaire text-[0.85rem] leading-snug">
+                                        <p className="text-secondaire text-[0.9rem] leading-snug">
                                             {[
                                                 s.seance.lieu ?? 'Lieu à confirmer',
                                                 duree ? formaterHeure(duree) : null,
@@ -76,20 +77,20 @@ export default function ListeJour({ seances, selection, nomSection, onBasculer }
                                                 .join(' · ')}
                                         </p>
                                         {s.seance.presence && (
-                                            <p className="text-secondaire text-[0.85rem] leading-snug">
+                                            <p className="text-secondaire text-[0.9rem] leading-snug">
                                                 En présence {formaterPresence(s.seance.presence)}
                                             </p>
                                         )}
                                         {s.seance.statut === 'a_verifier' && (
-                                            <p className="text-[0.85rem] font-bold">Horaire à vérifier</p>
+                                            <p className="text-[0.9rem] font-bold">Horaire à vérifier</p>
                                         )}
                                         {chevauche && (
-                                            <p className="text-[0.85rem] font-bold">
+                                            <p className="text-[0.9rem] font-bold">
                                                 Chevauche {chevauche.avec.evenement.titre}
                                             </p>
                                         )}
                                         {juste && (
-                                            <p className="text-[0.85rem] font-bold">
+                                            <p className="text-[0.9rem] font-bold">
                                                 Peu de temps avec {juste.avec.evenement.titre}
                                             </p>
                                         )}
@@ -98,7 +99,6 @@ export default function ListeJour({ seances, selection, nomSection, onBasculer }
                                     <button
                                         type="button"
                                         disabled={Boolean(chevauche)}
-                                        aria-pressed={ajoutee}
                                         aria-label={
                                             ajoutee
                                                 ? `Retirer ${e.titre} de ma sélection`

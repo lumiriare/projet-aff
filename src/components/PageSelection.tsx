@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { formaterHeure, formaterPresence, jourLong } from '../format'
 import { conflitsDansSelection } from '../moteur/conflits'
 import type { SeanceFestival } from '../moteur/seances'
@@ -7,16 +8,17 @@ interface Props {
     onRetirer: (id: string) => void
     onVider: () => void
     onRetour: () => void
+    bloc?: ReactNode // affiché sous le titre (films à voir et planning automatique)
 }
 
-export default function PageSelection({ selection, onRetirer, onVider, onRetour }: Props) {
+export default function PageSelection({ selection, onRetirer, onVider, onRetour, bloc }: Props) {
     const conflits = conflitsDansSelection(selection)
 
     const parJour = new Map<string, SeanceFestival[]>()
     for (const s of selection) parJour.set(s.jour, [...(parJour.get(s.jour) ?? []), s])
 
     return (
-        <div className="mx-auto max-w-3xl px-4 py-6">
+        <main className="mx-auto max-w-3xl px-4 py-6">
             <div className="flex flex-wrap items-center justify-between gap-3 print:hidden">
                 <button type="button" onClick={onRetour} className="min-h-11 border-2 border-encre px-3 font-bold">
                     ‹ Retour au programme
@@ -48,8 +50,10 @@ export default function PageSelection({ selection, onRetirer, onVider, onRetour 
                 Arras Film Festival · du 6 au 15 novembre 2026 · projet non officiel
             </p>
 
+            {bloc}
+
             {selection.length === 0 && (
-                <p className="mt-8">Votre sélection est vide. Ajoutez des séances depuis le programme.</p>
+                <p className="mt-8">Aucune séance choisie pour le moment. Ajoutez-en depuis le programme, ou proposez un planning à partir de vos films à voir.</p>
             )}
 
             {conflits.length > 0 && (
@@ -79,7 +83,7 @@ export default function PageSelection({ selection, onRetirer, onVider, onRetour 
                                             : `${formaterHeure(s.debutMin)}${s.finMin !== null && !s.dureeEstimee ? ` – ${formaterHeure(s.finMin)}` : ''}`}{' '}
                                         · {s.evenement.titre}
                                     </p>
-                                    <p className="text-secondaire text-[0.85rem]">
+                                    <p className="text-secondaire text-[0.9rem]">
                                         {s.seance.lieu ?? 'Lieu à confirmer'}
                                         {s.evenement.type === 'after' && ' · Entrée gratuite'}
                                         {s.seance.presence && ` · En présence ${formaterPresence(s.seance.presence)}`}
@@ -98,10 +102,10 @@ export default function PageSelection({ selection, onRetirer, onVider, onRetour 
                 </section>
             ))}
 
-            <p className="text-secondaire mt-10 text-[0.85rem] print:mt-6">
+            <p className="text-secondaire mt-10 text-[0.9rem] print:mt-6">
                 Les horaires sont à vérifier auprès du festival. Réservation et billetterie :
                 arrasfilmfestival.com.
             </p>
-        </div>
+        </main>
     )
 }
