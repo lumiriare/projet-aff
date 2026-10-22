@@ -84,7 +84,7 @@ export default function ParTheme({ sections, evenements, seancesParEvenement, se
                                         </a>
                                     </h3>
                                     <p className="text-secondaire text-[0.85rem] leading-snug">
-                                        {[e.realisation.join(', '), e.duree_min ? formaterHeure(e.duree_min) : null]
+                                        {[e.realisation.join(', '), e.duree_min ? formaterHeure(e.duree_min) : null, e.type === 'after' ? 'Entrée gratuite' : null]
                                             .filter(Boolean)
                                             .join(' · ')}
                                     </p>

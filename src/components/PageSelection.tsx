@@ -81,6 +81,7 @@ export default function PageSelection({ selection, onRetirer, onVider, onRetour 
                                     </p>
                                     <p className="text-secondaire text-[0.85rem]">
                                         {s.seance.lieu ?? 'Lieu à confirmer'}
+                                        {s.evenement.type === 'after' && ' · Entrée gratuite'}
                                         {s.seance.presence && ` · En présence ${formaterPresence(s.seance.presence)}`}
                                     </p>
                                 </div>

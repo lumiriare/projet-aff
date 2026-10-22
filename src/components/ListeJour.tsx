@@ -70,6 +70,7 @@ export default function ListeJour({ seances, selection, nomSection, onBasculer }
                                                 s.seance.lieu ?? 'Lieu à confirmer',
                                                 duree ? formaterHeure(duree) : null,
                                                 nomSection.get(e.section),
+                                                e.type === 'after' ? 'Entrée gratuite' : null,
                                             ]
                                                 .filter(Boolean)
                                                 .join(' · ')}
