@@ -1,6 +1,7 @@
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { formaterHeure, formaterPresence, jourLong } from '../format'
 import { conflitsDansSelection } from '../moteur/conflits'
+import { texteDuPlanning } from '../moteur/planning'
 import type { SeanceFestival } from '../moteur/seances'
 
 interface Props {
@@ -13,37 +14,66 @@ interface Props {
 
 export default function PageSelection({ selection, onRetirer, onVider, onRetour, bloc }: Props) {
     const conflits = conflitsDansSelection(selection)
+    const [message, setMessage] = useState('')
+    const peutPartager = typeof navigator !== 'undefined' && typeof navigator.share === 'function'
+
+    // « Imprimer » ne fait rien dans le navigateur intégré à une application (messagerie, réseau social…) :
+    // « Partager » (ou « Copier ») donne le planning en texte, utilisable partout
+    async function partager() {
+        const texte = texteDuPlanning(selection)
+        try {
+            if (peutPartager) {
+                await navigator.share({ title: 'Mon planning – Arras Film Festival', text: texte })
+            } else {
+                await navigator.clipboard.writeText(texte)
+                setMessage('Planning copié : collez-le dans un message ou une note.')
+            }
+        } catch (erreur) {
+            if (!(erreur instanceof DOMException && erreur.name === 'AbortError')) {
+                setMessage("Le partage n'a pas fonctionné. Réessayez, ou imprimez la page.")
+            }
+        }
+    }
 
     const parJour = new Map<string, SeanceFestival[]>()
     for (const s of selection) parJour.set(s.jour, [...(parJour.get(s.jour) ?? []), s])
 
     return (
         <main className="mx-auto max-w-3xl px-4 py-6">
-            <div className="flex flex-wrap items-center justify-between gap-3 print:hidden">
-                <button type="button" onClick={onRetour} className="min-h-11 border-2 border-encre px-3 font-bold">
+            <div className="grid grid-cols-2 gap-2 print:hidden sm:flex sm:flex-wrap">
+                <button
+                    type="button"
+                    onClick={onRetour}
+                    className="col-span-2 min-h-11 border-2 border-encre px-3 font-bold sm:mr-auto"
+                >
                     ‹ Retour au programme
                 </button>
-                <div className="flex gap-2">
-                    <button
-                        type="button"
-                        onClick={() => window.print()}
-                        disabled={selection.length === 0}
-                        className="min-h-11 border-2 border-encre bg-encre px-3 font-bold text-papier disabled:border-dashed disabled:bg-papier disabled:text-secondaire"
-                    >
-                        Imprimer
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => {
-                            if (window.confirm('Vider toute votre sélection ?')) onVider()
-                        }}
-                        disabled={selection.length === 0}
-                        className="min-h-11 border-2 border-encre px-3 font-bold disabled:border-dashed disabled:text-secondaire"
-                    >
-                        Tout retirer
-                    </button>
-                </div>
+                <button
+                    type="button"
+                    onClick={() => window.print()}
+                    disabled={selection.length === 0}
+                    className="min-h-11 w-full border-2 border-encre bg-encre px-3 font-bold text-papier disabled:border-dashed disabled:bg-papier disabled:text-secondaire sm:w-auto"
+                >
+                    Imprimer
+                </button>
+                <button
+                    type="button"
+                    onClick={partager}
+                    disabled={selection.length === 0}
+                    className="min-h-11 w-full border-2 border-encre px-3 font-bold disabled:border-dashed disabled:text-secondaire sm:w-auto"
+                >
+                    {peutPartager ? 'Partager' : 'Copier'}
+                </button>
             </div>
+            {message && (
+                <p role="status" className="mt-2 font-bold print:hidden">
+                    {message}
+                </p>
+            )}
+            <p className="text-secondaire mt-2 text-[0.9rem] print:hidden">
+                Si « Imprimer » ne répond pas (c'est le cas dans le navigateur intégré à une application), ouvrez le
+                site dans Safari ou Chrome, ou utilisez « {peutPartager ? 'Partager' : 'Copier'} ».
+            </p>
 
             <h2 className="mt-6 text-3xl font-bold">Mon planning</h2>
             <p className="text-secondaire mt-1">
@@ -101,6 +131,18 @@ export default function PageSelection({ selection, onRetirer, onVider, onRetour,
                     </ul>
                 </section>
             ))}
+
+            {selection.length > 0 && (
+                <button
+                    type="button"
+                    onClick={() => {
+                        if (window.confirm('Vider toute votre sélection ?')) onVider()
+                    }}
+                    className="mt-8 min-h-11 border-2 border-encre px-3 font-bold print:hidden"
+                >
+                    Tout retirer
+                </button>
+            )}
 
             <p className="text-secondaire mt-10 text-[0.9rem] print:mt-6">
                 Les horaires sont à vérifier auprès du festival. Réservation et billetterie :

@@ -1,26 +1,27 @@
+import { formaterHeure, formaterPresence, jourLong } from '../format'
 import type { Evenement } from '../types'
 import { conflitEntre } from './conflits'
 import { aDesDispo, estLibre, type Dispo } from './dispo'
 import type { SeanceFestival } from './seances'
 
 // Planning automatique : à partir des films qu'on veut voir, choisir une séance par film
-// sans conflit, en plaçant le plus de films possible, puis en limitant les jours ou les déplacements.
+// sans conflit, en plaçant le plus de films possible, puis en limitant les jours ou les déplacements
 
 export type Critere = 'peu_de_jours' | 'peu_de_deplacements'
 
 export interface Plan {
-    criteres: Critere[] // critères pour lesquels ce plan est le meilleur (un même plan peut gagner les deux)
-    seances: SeanceFestival[] // séances à ajouter, triées par jour puis par heure
-    sansPlace: Evenement[] // films qu'on n'a pas pu placer
-    nbJours: number // jours de présence, séances déjà choisies comprises
-    nbDeplacements: number // changements de lieu entre deux séances d'un même jour
+    criteres: Critere[]             // critères pour lesquels ce plan est le meilleur (un même plan peut gagner les deux)
+    seances: SeanceFestival[]       // séances à ajouter, triées par jour puis par heure
+    sansPlace: Evenement[]          // films qu'on n'a pas pu placer
+    nbJours: number                 // jours de présence, séances déjà choisies comprises
+    nbDeplacements: number          // changements de lieu entre deux séances d'un même jour
 }
 
 export interface Demande {
-    films: Evenement[] // films à voir
+    films: Evenement[]                                  // films à voir
     seancesParEvenement: Map<string, SeanceFestival[]>
-    fixes: SeanceFestival[] // séances déjà choisies à la main : elles ne bougent pas
-    dispos?: Dispo // si des moments libres sont indiqués, on n'utilise que ceux-là
+    fixes: SeanceFestival[]                             // séances déjà choisies à la main : elles ne bougent pas
+    dispos?: Dispo                                      // si des moments libres sont indiqués, on n'utilise que ceux-là
 }
 
 // Garde-fou : au-delà, on garde la meilleure solution trouvée
@@ -109,7 +110,7 @@ function optimiser(critere: Critere, options: Option[], fixes: SeanceFestival[])
     return meilleur
 }
 
-/** Au plus deux plannings : le moins de jours, et le moins de déplacements (fusionnés s'ils sont identiques). */
+// Au plus deux plannings : le moins de jours, et le moins de déplacements (fusionnés s'ils sont identiques)
 export function proposerPlannings(demande: Demande): Plan[] {
     const dejaPlanifies = new Set(demande.fixes.map((s) => s.evenement.id))
     const aPlacer = demande.films.filter((f) => !dejaPlanifies.has(f.id))
@@ -148,4 +149,32 @@ export function proposerPlannings(demande: Demande): Plan[] {
         })
     }
     return plans
+}
+
+// Le planning en texte simple, à coller dans un message ou une note (séances déjà triées par jour et heure)
+export function texteDuPlanning(seances: SeanceFestival[]): string {
+    if (seances.length === 0) return ''
+    const lignes = ['Mon planning · Arras Film Festival, du 6 au 15 novembre 2026']
+    let jourCourant = ''
+    for (const s of seances) {
+        if (s.jour !== jourCourant) {
+            jourCourant = s.jour
+            lignes.push('', jourLong(s.jour))
+        }
+        const heure =
+            s.debutMin === null
+                ? 'Heure à confirmer'
+                : s.finMin !== null && !s.dureeEstimee
+                  ? `${formaterHeure(s.debutMin)} – ${formaterHeure(s.finMin)}`
+                  : formaterHeure(s.debutMin)
+        const details = [
+            s.evenement.titre,
+            s.seance.lieu ?? 'Lieu à confirmer',
+            s.evenement.type === 'after' ? 'entrée gratuite' : null,
+            s.seance.presence ? `en présence ${formaterPresence(s.seance.presence)}` : null,
+        ].filter(Boolean)
+        lignes.push(`- ${heure} · ${details.join(' · ')}`)
+    }
+    lignes.push('', 'Horaires à vérifier auprès du festival (arrasfilmfestival.com). Planning fait avec Arras en Poche, projet non officiel.')
+    return lignes.join('\n')
 }

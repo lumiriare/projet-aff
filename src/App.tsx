@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import programmeJson from '../data/programme.json'
 import PanneauFiltres, { FILTRES_VIDES, type Filtres } from './components/Filtres'
 import GrilleDispo from './components/GrilleDispo'
@@ -29,8 +29,31 @@ for (const s of TOUTES_LES_SEANCES) {
 
 type Vue = 'programme' | 'theme' | 'selection'
 
+// La vue affichée est mémorisée dans l'adresse (#/theme, #/planning) : le bouton « Retour » du téléphone
+// revient à la vue précédente, et une adresse peut être partagée
+const ADRESSES: Record<Vue, string> = { programme: '#/', theme: '#/theme', selection: '#/planning' }
+
+function lireVue(): Vue {
+    const adresse = window.location.hash
+    return adresse === ADRESSES.theme ? 'theme' : adresse === ADRESSES.selection ? 'selection' : 'programme'
+}
+
 export default function App() {
-    const [vue, setVue] = useState<Vue>('programme')
+    const [vue, setVueAffichee] = useState<Vue>(lireVue)
+
+    useEffect(() => {
+        function surChangementAdresse() {
+            setVueAffichee(lireVue())
+            window.scrollTo(0, 0) // on repart en haut de la page, comme sur un nouvel écran
+        }
+        window.addEventListener('hashchange', surChangementAdresse)
+        return () => window.removeEventListener('hashchange', surChangementAdresse)
+    }, [])
+
+    function setVue(v: Vue) {
+        if (window.location.hash === ADRESSES[v]) setVueAffichee(v)
+        else window.location.hash = ADRESSES[v] // déclenche surChangementAdresse
+    }
     const [filtres, setFiltres] = useState<Filtres>(FILTRES_VIDES)
     const [jour, setJour] = useState(
         () => JOURS_FESTIVAL.find((j) => TOUTES_LES_SEANCES.some((s) => s.jour === j)) ?? JOURS_FESTIVAL[0],
@@ -338,7 +361,7 @@ export default function App() {
                 sont à vérifier auprès du festival.
                 <br></br>
                 Développé par <a href="https://github.com/lumiriare" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">lumiriare</a>.
-                Ce projet est open source est disponible sur <a href="https://github.com/lumiriare/projet-aff" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">GitHub</a>
+                Ce projet est open source et disponible sur <a href="https://github.com/lumiriare/projet-aff" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">GitHub</a>
             </footer>
         </div>
     )

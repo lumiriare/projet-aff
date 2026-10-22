@@ -20,6 +20,12 @@ function libelleSeance(s: SeanceFestival): string {
     return s.debutMin === null ? jour : `${jour} · ${formaterHeure(s.debutMin)}`
 }
 
+// « 7 films », mais « 7 événements » pour les afters, les ciné-concerts ou les rencontres
+function libelleCompte(films: Evenement[]): string {
+    const nom = films.every((f) => f.type === 'film') ? 'film' : 'événement'
+    return `${films.length} ${nom}${films.length > 1 ? 's' : ''}`
+}
+
 export default function ParTheme({ sections, evenements, seancesParEvenement, selection, onBasculer, aVoir, onBasculerAVoir }: Props) {
     const [recherche, setRecherche] = useState('')
     const idsChoisis = new Set(selection.map((s) => s.id))
@@ -60,7 +66,7 @@ export default function ParTheme({ sections, evenements, seancesParEvenement, se
                     Touchez « À voir » sur les films qui vous intéressent : le site peut vous proposer un planning.
                 </p>
                 <p className="text-secondaire mt-2" aria-live="polite">
-                    {nbFilms} film{nbFilms > 1 ? 's' : ''} dans {themes.length} thème{themes.length > 1 ? 's' : ''}
+                    {nbFilms} titre{nbFilms > 1 ? 's' : ''} dans {themes.length} thème{themes.length > 1 ? 's' : ''}
                 </p>
             </div>
 
@@ -70,7 +76,7 @@ export default function ParTheme({ sections, evenements, seancesParEvenement, se
                     <summary className="flex min-h-12 cursor-pointer items-center justify-between gap-3 px-4 py-2 text-lg font-bold">
                         <span>{section.nom}</span>
                         <span className="text-secondaire text-[0.9rem] font-normal">
-                            {films.length} film{films.length > 1 ? 's' : ''}
+                            {libelleCompte(films)}
                         </span>
                     </summary>
 
@@ -98,18 +104,21 @@ export default function ParTheme({ sections, evenements, seancesParEvenement, se
                                                 .join(' · ')}
                                         </p>
                                         </div>
-                                        <button
-                                            type="button"
-                                            aria-label={
-                                                aVoir.includes(e.id)
-                                                    ? `Retirer ${e.titre} de mes films à voir`
-                                                    : `Ajouter ${e.titre} à mes films à voir`
-                                            }
-                                            onClick={() => onBasculerAVoir(e.id)}
-                                            className={`min-h-11 shrink-0 border-2 border-encre px-2 font-bold whitespace-nowrap ${aVoir.includes(e.id) ? 'bg-encre text-papier' : 'bg-papier'}`}
-                                        >
-                                            {aVoir.includes(e.id) ? '★ À voir' : '☆ À voir'}
-                                        </button>
+                                        {/* Un after (concert, DJ set) n'est pas un film à placer : on touche directement sa séance */}
+                                        {e.type !== 'after' && (
+                                            <button
+                                                type="button"
+                                                aria-label={
+                                                    aVoir.includes(e.id)
+                                                        ? `Retirer ${e.titre} de mes films à voir`
+                                                        : `Ajouter ${e.titre} à mes films à voir`
+                                                }
+                                                onClick={() => onBasculerAVoir(e.id)}
+                                                className={`min-h-11 shrink-0 border-2 border-encre px-2 font-bold whitespace-nowrap ${aVoir.includes(e.id) ? 'bg-encre text-papier' : 'bg-papier'}`}
+                                            >
+                                                {aVoir.includes(e.id) ? '★ À voir' : '☆ À voir'}
+                                            </button>
+                                        )}
                                     </div>
 
                                     {seances.length === 0 ? (
